@@ -1,0 +1,850 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} سازمان فرهنگی هنری ورزشی شهرداری ساوه {% endblock title %}
+
+{% block body %}
+   <main class="main">
+    <!-- slider -->
+    <section class="slider">
+        <div class="swiper slider-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide position-relative">
+                    <div class="slider-text d-flex flex-column align-items-center justify-content-center">
+                        <div class="slider-title shadow-sm">عنوان متن آزمایشی تصویر</div>
+                        <div class="slider-subtitle shadow-sm mt-2 text-center">زیر عنوان متن آزمایشی انتخاب شده تصویر شهرستان ساوه</div>
+                    </div>
+                    <img class="img-fluid" src="{% static "images/slider-1.jpeg" %}" alt="">
+                </div>
+                <div class="swiper-slide position-relative">
+                    <div class="slider-text d-flex flex-column align-items-center justify-content-center">
+                        <div class="slider-title shadow-sm">عنوان متن آزمایشی تصویر</div>
+                        <div class="slider-subtitle shadow-sm mt-2 text-center">زیر عنوان متن آزمایشی انتخاب شده تصویر شهرستان ساوه</div>
+                    </div>
+                    <img class="img-fluid" src="{% static "images/slider-2.jpeg" %}" alt="">
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+    <!-- slider -->
+
+    <!-- overview -->
+    <section class="cultural-overview">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 d-none d-lg-block">
+                    <div class="cultural-info rounded shadow-lg d-flex flex-column  justify-content-center">
+                        <div class="cultural-info-title text-center">
+                            معرفی سازمان
+                        </div>
+                        <div class="cultural-info-subtitle mt-lg-5 mt-4">
+                            سازمان فرهنگی، اجتماعی و ورزشی شهرداری ساوه
+                        </div>
+                        <div class="cultural-info-separator mt-3"></div>
+                        <div class="cultural-info-content mt-4">
+                            سازمان با موضوع انجام امور فرهنگی و ورزشی و در چارچوب فعالیت و مأموریت های قانون شهرداری در زمینه مدیریت و اداره امور فرهنگی، تفریحی، ورزشی در قالب وظایف قانونی شهرداری قم فعالیت می نماید و طبق مقررات و اساسنامه این سازمان اداره می شود.
+                        </div>
+                        <div class="cultural-info-footer text-center mt-lg-5 mt-3">
+                            حقوق و اخلاق حرفه ای، اعتبار کار ماست
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-12">
+                    <div class="events-wrapper">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="#" class="event-item text-decoration-none d-flex align-items-center">
+                                    <div class="event-icon">
+                                        <img class="img-fluid" src="{% static "images/event_cultural_register.png" %}" alt="ثبت نام داوطلب فرهنگی">
+                                    </div>
+                                    <div class="event-content ms-2">
+                                        <div class="event-title">ثبت نام داوطلب فرهنگی</div>
+                                        <div class="event-separator"></div>
+                                        <div class="event-subtitle">با ما در فعالیت‌های فرهنگی ساوه همراه شوید.</div>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="event-item text-decoration-none d-flex align-items-center mt-4">
+                                    <div class="event-icon">
+                                        <img class="img-fluid" src="{% static "images/participate_events.png" %}" alt="شرکت در رویدادها">
+                                    </div>
+                                    <div class="event-content ms-2">
+                                        <div class="event-title">شرکت در رویدادها</div>
+                                        <div class="event-separator"></div>
+                                        <div class="event-subtitle">ثبت نام در رویدادهای فرهنگی، هنری و ورزشی</div>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="event-item text-decoration-none d-flex align-items-center mt-4">
+                                    <div class="event-icon">
+                                        <img class="img-fluid" src="{% static "images/city_cultural_icon.png" %}" alt="کمیته فرهنگ شهروندی">
+                                    </div>
+                                    <div class="event-content ms-2">
+                                        <div class="event-title">کمیته فرهنگ شهروندی</div>
+                                        <div class="event-separator"></div>
+                                        <div class="event-subtitle">ترویج فرهنگ شهروندی و مسئولیت‌پذیری اجتماعی.</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="#" class="event-item text-decoration-none d-flex align-items-center">
+                                    <div class="event-icon">
+                                        <img class="img-fluid" src="{% static "images/training_course_icon.png" %}" alt="دوره های آموزشی">
+                                    </div>
+                                    <div class="event-content ms-2">
+                                        <div class="event-title">دوره های آموزشی</div>
+                                        <div class="event-separator"></div>
+                                        <div class="event-subtitle">ارتقای دانش و مهارت شهروندان از طریق آموزش‌های کاربردی و تخصصی.</div>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="event-item text-decoration-none d-flex align-items-center mt-4">
+                                    <div class="event-icon">
+                                        <img class="img-fluid" src="{% static "images/contest_poll.png" %}" alt="شرکت در مسابقه و نظر سنجی">
+                                    </div>
+                                    <div class="event-content ms-2">
+                                        <div class="event-title">شرکت در مسابقه و نظر سنجی</div>
+                                        <div class="event-separator"></div>
+                                        <div class="event-subtitle">مشارکت در مسابقات و نظرسنجی‌ها برای تعامل و بیان دیدگاه شهروندان.</div>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="event-item text-decoration-none d-flex align-items-center mt-4">
+                                    <div class="event-icon">
+                                        <img class="img-fluid" src="{% static "images/participation_icon.png" %}" alt="نحوه مشارکت با ما">
+                                    </div>
+                                    <div class="event-content ms-2">
+                                        <div class="event-title">نحوه مشارکت با ما</div>
+                                        <div class="event-separator"></div>
+                                        <div class="event-subtitle">با ارائه ایده‌ها، همکاری در برنامه‌ها و ارتباط با ما مشارکت کنید.</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- overview -->
+
+    <!-- one-eye -->
+    <div class="container">
+        <section class="one-eye mt-5">
+            <a class="section-title-wrapper text-decoration-none d-flex flex-column align-items-center justify-content-center gap-2">
+                <img src="{% static "images/one_eye.png" %}" alt="سازمان فرهنگی هنری اجتماعی ورزشی شهرداری ساوه">
+                <div class="section-title d-flex align-items-center justify-content-center gap-4">
+                    <span>در یک نگاه</span>
+                </div>
+            </a>
+
+            <div class="statistics-wrapper shadow-lg p-3 d-flex align-items-center justify-content-around flex-wrap mt-4 gap-2">
+                <div class="stat-item d-flex flex-column justify-content-center align-items-center">
+                    <div class="stat-icon">
+                        <i class="bi bi-book"></i>
+                    </div>
+                    <div class="stat-title text-center">
+                        تعداد برنامه های سالانه
+                    </div>
+                    <div class="stat-content mt-2 text-center" id="stat1">0</div>
+                </div>
+                <div class="stat-separator d-none d-lg-block"></div>
+
+                <div class="stat-item d-flex flex-column justify-content-center align-items-center">
+                    <div class="stat-icon">
+                        <i class="bi bi-person-check"></i>
+                    </div>
+                    <div class="stat-title text-center">
+                        مشارکت ها
+                    </div>
+                    <div class="stat-content mt-2 text-center" id="stat2">0</div>
+                </div>
+                <div class="stat-separator d-none d-lg-block"></div>
+
+                <div class="stat-item d-flex flex-column justify-content-center align-items-center">
+                    <div class="stat-icon">
+                        <i class="bi bi-bank"></i>
+                    </div>
+                    <div class="stat-title text-center">
+                        فرهنگسراها
+                    </div>
+                    <div class="stat-content mt-2 text-center" id="stat3">0</div>
+                </div>
+                <div class="stat-separator d-none d-lg-block"></div>
+
+                <div class="stat-item d-flex flex-column justify-content-center align-items-center">
+                    <div class="stat-icon">
+                        <i class="bi bi-dribbble"></i>
+                    </div>
+                    <div class="stat-title text-center">
+                        مجموعه های ورزشی
+                    </div>
+                    <div class="stat-content mt-2 text-center" id="stat4">0</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- one-eye -->
+
+    <!-- last events -->
+    <section class="last-events mt-5">
+        <div class="last-events-title-wrapper d-flex align-items-center">
+            <i class="bi bi-dot"></i>
+            <div class="last-e-title">آخرین آئین ها و رویدادها</div>
+        </div>
+
+        <div class="swiper last-events-swiper pb-5 ">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="last-event-card rounded">
+                        <div class="last-event-front rounded">
+                            <a href="blog_detail.html" class="last-e-item text-decoration-none rounded shadow-sm">
+                                <img src="resources/images/last-event-pic1.jpeg" alt="">
+                            </a>
+                        </div>
+
+                        <div class="last-event-back">
+                            <h5>عنوان رویداد</h5>
+                            <div class="mt-4">توضیحات انتخابی رویداد مورد نظر</div>
+                            <a href="blog_detail.html" class="btn btn-outline-warning mt-4">مشاهده بیشتر</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="last-event-card rounded">
+                        <div class="last-event-front rounded">
+                            <a href="#" class="last-e-item text-decoration-none rounded shadow-sm">
+                                <img src="resources/images/last-event-pic2.jpeg" alt="">
+                            </a>
+                        </div>
+
+                        <div class="last-event-back">
+                            <h5>عنوان رویداد</h5>
+                            <div class="mt-4">توضیحات انتخابی رویداد مورد نظر</div>
+                            <a href="#" class="btn btn-outline-warning mt-4">مشاهده بیشتر</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="last-event-card rounded">
+                        <div class="last-event-front rounded">
+                            <a href="#" class="last-e-item text-decoration-none rounded shadow-sm">
+                                <img src="resources/images/last-event-pic1.jpeg" alt="">
+                            </a>
+                        </div>
+
+                        <div class="last-event-back">
+                            <h5>عنوان رویداد</h5>
+                            <div class="mt-4">توضیحات انتخابی رویداد مورد نظر</div>
+                            <a href="#" class="btn btn-outline-warning mt-4">مشاهده بیشتر</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="last-event-card rounded">
+                        <div class="last-event-front rounded">
+                            <a href="#" class="last-e-item text-decoration-none rounded shadow-sm">
+                                <img src="resources/images/last-event-pic2.jpeg" alt="">
+                            </a>
+                        </div>
+
+                        <div class="last-event-back">
+                            <h5>عنوان رویداد</h5>
+                            <div class="mt-4">توضیحات انتخابی رویداد مورد نظر</div>
+                            <a href="#" class="btn btn-outline-warning mt-4">مشاهده بیشتر</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="last-event-card rounded">
+                        <div class="last-event-front rounded">
+                            <a href="#" class="last-e-item text-decoration-none rounded shadow-sm">
+                                <img src="resources/images/last-event-pic1.jpeg" alt="">
+                            </a>
+                        </div>
+
+                        <div class="last-event-back">
+                            <h5>عنوان رویداد</h5>
+                            <div class="mt-4">توضیحات انتخابی رویداد مورد نظر</div>
+                            <a href="#" class="btn btn-outline-warning mt-4">مشاهده بیشتر</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- last events -->
+
+    <!-- last news -->
+    <section class="last-news">
+        <a href="#" class="section-title-wrapper text-decoration-none d-flex flex-column align-items-center justify-content-center gap-2">
+            <img src="{% static "images/last-news-icon.png" %}" alt="سازمان فرهنگی هنری اجتماعی ورزشی شهرداری ساوه">
+            <div class="section-title d-flex align-items-center justify-content-center gap-4">
+                <span>آخرین اخبار</span>
+            </div>
+            <div class="section-subtitle">
+                با تازه ترین رویدادها، اخبار و اطلاعیه های شهرداری همراه ما باشید
+            </div>
+        </a>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-3 d-none d-xl-block">
+                    <div class="most-see-news shadow-lg d-flex flex-column justify-content-center mt-4">
+                        <div class="most-news-title d-flex align-content-center gap-3">
+                            <i class="bi bi-fire"></i>
+                            <p>پربازدید ترین خبرها</p>
+                        </div>
+
+                        <div class="most-item-news-wrapper">
+                            <a href="blog_detail.html" class="most-news-item text-decoration-none d-block px-3 pt-3">
+                                <div class="m-news-content d-flex align-items-center">
+                                    <img class="img-fluid rounded shadow-sm" src="resources/images/last-event-pic1.jpeg" alt="">
+                                    <div class="m-news-title ms-2">
+                                        عملیات بهسازی و نوسازی میدان شهرداری
+                                    </div>
+                                </div>
+                                <div class="m-news-extra d-flex justify-content-end mt-2">
+                                    <p>28/06/1405</p>
+                                    <div class="ms-4">
+                                        <span>250</span>
+                                        <i class="bi bi-eye"></i>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="most-news-item text-decoration-none d-block px-3 pt-3">
+                                <div class="m-news-content d-flex align-items-center">
+                                    <img class="img-fluid rounded shadow-sm" src="resources/images/last-event-pic1.jpeg" alt="">
+                                    <div class="m-news-title ms-2">
+                                        عملیات بهسازی و نوسازی میدان شهرداری
+                                    </div>
+                                </div>
+                                <div class="m-news-extra d-flex justify-content-end mt-2">
+                                    <p>28/06/1405</p>
+                                    <div class="ms-4">
+                                        <span>250</span>
+                                        <i class="bi bi-eye"></i>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="most-news-item text-decoration-none d-block px-3 pt-3">
+                                <div class="m-news-content d-flex align-items-center">
+                                    <img class="img-fluid rounded shadow-sm" src="resources/images/last-event-pic1.jpeg" alt="">
+                                    <div class="m-news-title ms-2">
+                                        عملیات بهسازی و نوسازی میدان شهرداری
+                                    </div>
+                                </div>
+                                <div class="m-news-extra d-flex justify-content-end mt-2">
+                                    <p>28/06/1405</p>
+                                    <div class="ms-4">
+                                        <span>250</span>
+                                        <i class="bi bi-eye"></i>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="blog_detail.html" class="most-news-item text-decoration-none d-block px-3 pt-3">
+                                <div class="m-news-content d-flex align-items-center">
+                                    <img class="img-fluid rounded shadow-sm" src="resources/images/last-event-pic1.jpeg" alt="">
+                                    <div class="m-news-title ms-2">
+                                        عملیات بهسازی و نوسازی میدان شهرداری
+                                    </div>
+                                </div>
+                                <div class="m-news-extra d-flex justify-content-end mt-2">
+                                    <p>28/06/1405</p>
+                                    <div class="ms-4">
+                                        <span>250</span>
+                                        <i class="bi bi-eye"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <a href="#" class="btn btn-outline-warning mx-5 my-3">مشاهده همه اخبار</a>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-12">
+                    <div class="last-news-wrapper row g-4 mt-1">
+                        <div class="col-12 col-md-4">
+                            <div href="#" class="news-item shadow-lg text-decoration-none d-flex flex-column p-3">
+                                <a href="#" class="text-decoration-none position-relative">
+                                    <div class="d-flex justify-content-between position-absolute w-100 px-2 mt-2">
+                                        <div class="news-category rounded-5 d-flex align-content-center gap-2">
+                                            <i class="bi bi-bookmark-check"></i>
+                                            <span>ورزشی</span>
+                                        </div>
+
+                                        <div class="news-date d-flex align-content-center rounded-5 gap-2">
+                                            <span>10/07/1405</span>
+                                            <i class="bi bi-calendar2-check"></i>
+                                        </div>
+                                    </div>
+                                    <img src="resources/images/last-event-pic2.jpeg" class="img-fluid shadow-sm rounded" alt="">
+                                </a>
+                                <h3 class="news-title mt-3">
+                                    افتتاح مسابقات فوتسال ادارات ساوه
+                                </h3>
+                                <div class="news-excerpt mt-2">
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                                </div>
+                                <a href="#" class="news-read d-flex align-content-center justify-content-end text-decoration-none gap-2 mt-2">
+                                    <span>مطالعه بیشتر</span>
+                                    <i class="bi bi-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <div href="blog_detail.html" class="news-item shadow-lg text-decoration-none d-flex flex-column p-3">
+                                <a href="#" class="text-decoration-none position-relative">
+                                    <div class="d-flex justify-content-between position-absolute w-100 px-2 mt-2">
+                                        <div class="news-category rounded-5 d-flex align-content-center gap-2">
+                                            <i class="bi bi-bookmark-check"></i>
+                                            <span>ورزشی</span>
+                                        </div>
+
+                                        <div class="news-date d-flex align-content-center rounded-5 gap-2">
+                                            <span>10/07/1405</span>
+                                            <i class="bi bi-calendar2-check"></i>
+                                        </div>
+                                    </div>
+                                    <img src="resources/images/last-event-pic2.jpeg" class="img-fluid shadow-sm rounded" alt="">
+                                </a>
+                                <h3 class="news-title mt-3">
+                                    افتتاح مسابقات فوتسال ادارات ساوه
+                                </h3>
+                                <div class="news-excerpt mt-2">
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                                </div>
+                                <a href="#" class="news-read d-flex align-content-center justify-content-end text-decoration-none gap-2 mt-2">
+                                    <span>مطالعه بیشتر</span>
+                                    <i class="bi bi-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <div href="#" class="news-item shadow-lg text-decoration-none d-flex flex-column p-3">
+                                <a href="#" class="text-decoration-none position-relative">
+                                    <div class="d-flex justify-content-between position-absolute w-100 px-2 mt-2">
+                                        <div class="news-category rounded-5 d-flex align-content-center gap-2">
+                                            <i class="bi bi-bookmark-check"></i>
+                                            <span>ورزشی</span>
+                                        </div>
+
+                                        <div class="news-date d-flex align-content-center rounded-5 gap-2">
+                                            <span>10/07/1405</span>
+                                            <i class="bi bi-calendar2-check"></i>
+                                        </div>
+                                    </div>
+                                    <img src="resources/images/last-event-pic2.jpeg" class="img-fluid shadow-sm rounded" alt="">
+                                </a>
+                                <h3 class="news-title mt-3">
+                                    افتتاح مسابقات فوتسال ادارات ساوه
+                                </h3>
+                                <div class="news-excerpt mt-2">
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                                </div>
+                                <a href="#" class="news-read d-flex align-content-center justify-content-end text-decoration-none gap-2 mt-2">
+                                    <span>مطالعه بیشتر</span>
+                                    <i class="bi bi-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <div href="blog_detail.html" class="news-item shadow-lg text-decoration-none d-flex flex-column p-3">
+                                <a href="#" class="text-decoration-none position-relative">
+                                    <div class="d-flex justify-content-between position-absolute w-100 px-2 mt-2">
+                                        <div class="news-category rounded-5 d-flex align-content-center gap-2">
+                                            <i class="bi bi-bookmark-check"></i>
+                                            <span>ورزشی</span>
+                                        </div>
+
+                                        <div class="news-date d-flex align-content-center rounded-5 gap-2">
+                                            <span>10/07/1405</span>
+                                            <i class="bi bi-calendar2-check"></i>
+                                        </div>
+                                    </div>
+                                    <img src="resources/images/last-event-pic2.jpeg" class="img-fluid shadow-sm rounded" alt="">
+                                </a>
+                                <h3 class="news-title mt-3">
+                                    افتتاح مسابقات فوتسال ادارات ساوه
+                                </h3>
+                                <div class="news-excerpt mt-2">
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                                </div>
+                                <a href="#" class="news-read d-flex align-content-center justify-content-end text-decoration-none gap-2 mt-2">
+                                    <span>مطالعه بیشتر</span>
+                                    <i class="bi bi-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <div href="#" class="news-item shadow-lg text-decoration-none d-flex flex-column p-3">
+                                <a href="#" class="text-decoration-none position-relative">
+                                    <div class="d-flex justify-content-between position-absolute w-100 px-2 mt-2">
+                                        <div class="news-category rounded-5 d-flex align-content-center gap-2">
+                                            <i class="bi bi-bookmark-check"></i>
+                                            <span>ورزشی</span>
+                                        </div>
+
+                                        <div class="news-date d-flex align-content-center rounded-5 gap-2">
+                                            <span>10/07/1405</span>
+                                            <i class="bi bi-calendar2-check"></i>
+                                        </div>
+                                    </div>
+                                    <img src="resources/images/last-event-pic2.jpeg" class="img-fluid shadow-sm rounded" alt="">
+                                </a>
+                                <h3 class="news-title mt-3">
+                                    افتتاح مسابقات فوتسال ادارات ساوه
+                                </h3>
+                                <div class="news-excerpt mt-2">
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                                </div>
+                                <a href="#" class="news-read d-flex align-content-center justify-content-end text-decoration-none gap-2 mt-2">
+                                    <span>مطالعه بیشتر</span>
+                                    <i class="bi bi-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <div href="#" class="news-item shadow-lg text-decoration-none d-flex flex-column p-3">
+                                <a href="#" class="text-decoration-none position-relative">
+                                    <div class="d-flex justify-content-between position-absolute w-100 px-2 mt-2">
+                                        <div class="news-category rounded-5 d-flex align-content-center gap-2">
+                                            <i class="bi bi-bookmark-check"></i>
+                                            <span>ورزشی</span>
+                                        </div>
+
+                                        <div class="news-date d-flex align-content-center rounded-5 gap-2">
+                                            <span>10/07/1405</span>
+                                            <i class="bi bi-calendar2-check"></i>
+                                        </div>
+                                    </div>
+                                    <img src="resources/images/last-event-pic2.jpeg" class="img-fluid shadow-sm rounded" alt="">
+                                </a>
+                                <h3 class="news-title mt-3">
+                                    افتتاح مسابقات فوتسال ادارات ساوه
+                                </h3>
+                                <div class="news-excerpt mt-2">
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                                </div>
+                                <a href="#" class="news-read d-flex align-content-center justify-content-end text-decoration-none gap-2 mt-2">
+                                    <span>مطالعه بیشتر</span>
+                                    <i class="bi bi-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- last news -->
+
+    <!-- Gallery -->
+    <section class="gallery mt-5">
+        <a href="blog_detail.html" class="section-title-wrapper text-decoration-none d-flex flex-column align-items-center justify-content-center gap-2">
+            <img src="{% static "images/gallery-icon.png" %}" alt="سازمان فرهنگی هنری اجتماعی ورزشی شهرداری ساوه">
+            <div class="section-title d-flex align-items-center justify-content-center gap-4">
+                <span>گزارش تصویری</span>
+            </div>
+            <div class="section-subtitle">
+                با تازه ترین رویدادها، اخبار و اطلاعیه های شهرداری همراه ما باشید
+            </div>
+        </a>
+
+        <div class="container-fluid mt-5">
+            <div class="swiper gallery-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="gallery-item d-flex flex-column justify-content-center position-relative">
+                            <a href="#" class="text-decoration-none">
+                                <div class="g-category d-flex align-content-center align-items-center gap-2">
+                                    <i class="bi bi-camera"></i>
+                                    <span>مراسمات</span>
+                                </div>
+                                <img src="resources/images/last-event-pic1.jpeg" alt="">
+                            </a>
+                            <div class="gallery-content-wrapper d-flex flex-column justify-content-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="g-title">برپایی جشن بزرگ غدیر در شهرستان ساوه</div>
+                                    <div class="g-date mt-2 d-flex align-items-center align-content-center gap-2">
+                                        <i class="bi bi-calendar-week"></i>
+                                        <span>23/11/1404</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="g-read align-self-end text-decoration-none d-flex justify-content-center align-content-center gap-2 py-2">
+                                    <span>مشاهده تصاویر</span>
+                                    <i class="bi bi-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="gallery-item d-flex flex-column justify-content-center position-relative">
+                            <a href="blog_detail.html" class="text-decoration-none">
+                                <div class="g-category d-flex align-content-center align-items-center gap-2">
+                                    <i class="bi bi-camera"></i>
+                                    <span>مراسمات</span>
+                                </div>
+                                <img src="resources/images/last-event-pic1.jpeg" alt="">
+                            </a>
+                            <div class="gallery-content-wrapper d-flex flex-column justify-content-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="g-title">برپایی جشن بزرگ غدیر در شهرستان ساوه</div>
+                                    <div class="g-date mt-2 d-flex align-items-center align-content-center gap-2">
+                                        <i class="bi bi-calendar-week"></i>
+                                        <span>23/11/1404</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="g-read align-self-end text-decoration-none d-flex justify-content-center align-content-center gap-2 py-2">
+                                    <span>مشاهده تصاویر</span>
+                                    <i class="bi bi-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="gallery-item d-flex flex-column justify-content-center position-relative">
+                            <a href="#" class="text-decoration-none">
+                                <div class="g-category d-flex align-content-center align-items-center gap-2">
+                                    <i class="bi bi-camera"></i>
+                                    <span>مراسمات</span>
+                                </div>
+                                <img src="resources/images/last-event-pic1.jpeg" alt="">
+                            </a>
+                            <div class="gallery-content-wrapper d-flex flex-column justify-content-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="g-title">برپایی جشن بزرگ غدیر در شهرستان ساوه</div>
+                                    <div class="g-date mt-2 d-flex align-items-center align-content-center gap-2">
+                                        <i class="bi bi-calendar-week"></i>
+                                        <span>23/11/1404</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="g-read align-self-end text-decoration-none d-flex justify-content-center align-content-center gap-2 py-2">
+                                    <span>مشاهده تصاویر</span>
+                                    <i class="bi bi-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="gallery-item d-flex flex-column justify-content-center position-relative">
+                            <a href="#" class="text-decoration-none">
+                                <div class="g-category d-flex align-content-center align-items-center gap-2">
+                                    <i class="bi bi-camera"></i>
+                                    <span>مراسمات</span>
+                                </div>
+                                <img src="resources/images/last-event-pic1.jpeg" alt="">
+                            </a>
+                            <div class="gallery-content-wrapper d-flex flex-column justify-content-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="g-title">برپایی جشن بزرگ غدیر در شهرستان ساوه</div>
+                                    <div class="g-date mt-2 d-flex align-items-center align-content-center gap-2">
+                                        <i class="bi bi-calendar-week"></i>
+                                        <span>23/11/1404</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="g-read align-self-end text-decoration-none d-flex justify-content-center align-content-center gap-2 py-2">
+                                    <span>مشاهده تصاویر</span>
+                                    <i class="bi bi-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="gallery-item d-flex flex-column justify-content-center position-relative">
+                            <a href="#" class="text-decoration-none">
+                                <div class="g-category d-flex align-content-center align-items-center gap-2">
+                                    <i class="bi bi-camera"></i>
+                                    <span>مراسمات</span>
+                                </div>
+                                <img src="resources/images/last-event-pic1.jpeg" alt="">
+                            </a>
+                            <div class="gallery-content-wrapper d-flex flex-column justify-content-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="g-title">برپایی جشن بزرگ غدیر در شهرستان ساوه</div>
+                                    <div class="g-date mt-2 d-flex align-items-center align-content-center gap-2">
+                                        <i class="bi bi-calendar-week"></i>
+                                        <span>23/11/1404</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="g-read align-self-end text-decoration-none d-flex justify-content-center align-content-center gap-2 py-2">
+                                    <span>مشاهده تصاویر</span>
+                                    <i class="bi bi-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="gallery-item d-flex flex-column justify-content-center position-relative">
+                            <a href="#" class="text-decoration-none">
+                                <div class="g-category d-flex align-content-center align-items-center gap-2">
+                                    <i class="bi bi-camera"></i>
+                                    <span>مراسمات</span>
+                                </div>
+                                <img src="resources/images/last-event-pic1.jpeg" alt="">
+                            </a>
+                            <div class="gallery-content-wrapper d-flex flex-column justify-content-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="g-title">برپایی جشن بزرگ غدیر در شهرستان ساوه</div>
+                                    <div class="g-date mt-2 d-flex align-items-center align-content-center gap-2">
+                                        <i class="bi bi-calendar-week"></i>
+                                        <span>23/11/1404</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="g-read align-self-end text-decoration-none d-flex justify-content-center align-content-center gap-2 py-2">
+                                    <span>مشاهده تصاویر</span>
+                                    <i class="bi bi-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="gallery-item d-flex flex-column justify-content-center position-relative">
+                            <a href="#" class="text-decoration-none">
+                                <div class="g-category d-flex align-content-center align-items-center gap-2">
+                                    <i class="bi bi-camera"></i>
+                                    <span>مراسمات</span>
+                                </div>
+                                <img src="resources/images/last-event-pic1.jpeg" alt="">
+                            </a>
+                            <div class="gallery-content-wrapper d-flex flex-column justify-content-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="g-title">برپایی جشن بزرگ غدیر در شهرستان ساوه</div>
+                                    <div class="g-date mt-2 d-flex align-items-center align-content-center gap-2">
+                                        <i class="bi bi-calendar-week"></i>
+                                        <span>23/11/1404</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="g-read align-self-end text-decoration-none d-flex justify-content-center align-content-center gap-2 py-2">
+                                    <span>مشاهده تصاویر</span>
+                                    <i class="bi bi-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="gallery-item d-flex flex-column justify-content-center position-relative">
+                            <a href="#" class="text-decoration-none">
+                                <div class="g-category d-flex align-content-center align-items-center gap-2">
+                                    <i class="bi bi-camera"></i>
+                                    <span>مراسمات</span>
+                                </div>
+                                <img src="resources/images/last-event-pic1.jpeg" alt="">
+                            </a>
+                            <div class="gallery-content-wrapper d-flex flex-column justify-content-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="g-title">برپایی جشن بزرگ غدیر در شهرستان ساوه</div>
+                                    <div class="g-date mt-2 d-flex align-items-center align-content-center gap-2">
+                                        <i class="bi bi-calendar-week"></i>
+                                        <span>23/11/1404</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="g-read align-self-end text-decoration-none d-flex justify-content-center align-content-center gap-2 py-2">
+                                    <span>مشاهده تصاویر</span>
+                                    <i class="bi bi-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="gallery-item d-flex flex-column justify-content-center position-relative">
+                            <a href="#" class="text-decoration-none">
+                                <div class="g-category d-flex align-content-center align-items-center gap-2">
+                                    <i class="bi bi-camera"></i>
+                                    <span>مراسمات</span>
+                                </div>
+                                <img src="resources/images/last-event-pic1.jpeg" alt="">
+                            </a>
+                            <div class="gallery-content-wrapper d-flex flex-column justify-content-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="g-title">برپایی جشن بزرگ غدیر در شهرستان ساوه</div>
+                                    <div class="g-date mt-2 d-flex align-items-center align-content-center gap-2">
+                                        <i class="bi bi-calendar-week"></i>
+                                        <span>23/11/1404</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="g-read align-self-end text-decoration-none d-flex justify-content-center align-content-center gap-2 py-2">
+                                    <span>مشاهده تصاویر</span>
+                                    <i class="bi bi-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next gallery-next"></div>
+                <div class="swiper-button-prev gallery-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery -->
+
+    <!-- CEO word -->
+     <section class="ceo container mt-5">
+        <a class="section-title-wrapper text-decoration-none d-flex flex-column align-items-center justify-content-center gap-2">
+            <img src="{% static "images/ceo-icon.png" %}" alt="سازمان فرهنگی هنری اجتماعی ورزشی شهرداری ساوه">
+            <div class="section-title d-flex align-items-center justify-content-center gap-4">
+                <span>سخن مدیرعامل</span>
+            </div>
+            <div class="section-subtitle">
+                فرهنگ و نشاط اجتماعی، از مهم‌ترین ارکان توسعه و پیشرفت هر شهر است.
+            </div>
+        </a>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="ceo-img-wrapper rounded-5 shadow-sm">
+                    <img class="img-fluid shadow-lg" src="{% static "images/ceo-img.jpeg" %}" alt="سازمان فرهنگی هنری اجتماعی ورزشی شهرداری ساوه">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="ceo-message">
+                    <div class="ceo-message-title mt-3">
+                        با هم، برای آینده بهتر
+                    </div>
+                    <div class="ceo-message-content mt-3">
+                        سازمان فرهنگی، اجتماعی و ورزشی شهرداری ساوه با هدف ارتقای کیفیت زندگی شهروندان فعالیت می‌کند.
+                        تلاش ما بر گسترش برنامه‌های فرهنگی، اجتماعی و ورزشی و ایجاد فرصت‌های برابر برای همه شهروندان است.
+                        حمایت از جوانان، توسعه ورزش همگانی و تقویت مشارکت اجتماعی، از اولویت‌های این مجموعه به شمار می‌رود.
+                        همچنین پاسداشت هویت، فرهنگ و ظرفیت‌های ارزشمند شهر ساوه را وظیفه‌ای مهم می‌دانیم.
+                        امیدواریم با همراهی شهروندان و همکاری مجموعه مدیریت شهری، شهری پویا، بانشاط و امیدآفرین داشته باشیم.
+                        در این مسیر، خدمت به شهروندان و حرکت در جهت توسعه همه‌جانبه ساوه، مهم‌ترین هدف ماست.
+                    </div>
+                    <div class="ceo-sign d-flex flex-column align-items-end w-100">
+                        <div class="ceo-name text-center">رضا یزدی</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- CEO word -->
+
+    <!-- city image -->
+    <section class="city-image">
+        <img class="img-fluid" src="{% static "images/saveh-city-image.jpeg" %}" alt="سازمان فرهنگی هنری اجتماعی ورزشی شهرداری ساوه">
+    </section>
+    <!-- city image -->
+   </main>
+{% endblock body %}
