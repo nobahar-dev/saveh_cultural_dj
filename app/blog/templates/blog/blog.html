@@ -1,0 +1,282 @@
+{% extends "base.html" %}
+{% load jalali_tags %}
+
+{% block title %} سازمان فرهنگی هنری ورزشی شهرداری ساوه {% endblock title %}
+
+{% block body %}
+{% comment %} hero banner {% endcomment %}
+{% include "blog/hero_banner.html" %}
+
+{% comment %} main content {% endcomment %}
+<main class="main container-fluid my-4">
+    <div class="row">
+        <div class="col-xl-3 d-none d-xl-block">
+            <div class="blog-last-news p-3 shadow-lg">
+                <div class="blog-last-news-title-wrapper d-flex align-content-center gap-3">
+                    <i class="bi bi-newspaper"></i>
+                    <span>آخرین اخبار</span>
+                </div>
+                <div class="bls-separator shadow-lg"></div>
+                <div class="blog-last-news-wrapper d-flex flex-column gap-1">
+                    <a href="#" class="blog-last-news-item text-decoration-none">
+                        <div class="d-flex justify-content-around gap-4 my-3">
+                            <div class="bln-content d-flex flex-column align-items-center">
+                                <div class="news-extra d-flex justify-content-between align-items-center w-100">
+                                    <div class="news-ex-date d-flex align-content-center gap-2">
+                                        <i class="bi bi-calendar-check"></i>
+                                        <span>28/06/1404</span>
+                                    </div>
+                                    <div class="news-ex-category d-flex align-content-center gap-2">
+                                        <i class="bi bi-bookmark-check"></i>
+                                        <span>فرهنگی</span>
+                                    </div>
+                                </div>
+                                <div class="bln-title mt-3">
+                                    برگزاری آیین گرامیداشت عید غدیرم خم در ساوه
+                                </div>
+                            </div>
+                            <div class="bln-img">
+                                <img class="img-fluid rounded shadow-sm" src="resources/images/last-event-pic1.jpeg" alt="">
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="blog-last-news-item text-decoration-none">
+                        <div class="d-flex justify-content-around gap-4 my-3">
+                            <div class="bln-content d-flex flex-column align-items-center">
+                                <div class="news-extra d-flex justify-content-between align-items-center w-100">
+                                    <div class="news-ex-date d-flex align-content-center gap-2">
+                                        <i class="bi bi-calendar-check"></i>
+                                        <span>28/06/1404</span>
+                                    </div>
+                                    <div class="news-ex-category d-flex align-content-center gap-2">
+                                        <i class="bi bi-bookmark-check"></i>
+                                        <span>فرهنگی</span>
+                                    </div>
+                                </div>
+                                <div class="bln-title mt-3">
+                                    برگزاری آیین گرامیداشت عید غدیرم خم در ساوه
+                                </div>
+                            </div>
+                            <div class="bln-img">
+                                <img class="img-fluid rounded shadow-sm" src="resources/images/last-event-pic1.jpeg" alt="">
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="blog-last-news-item text-decoration-none">
+                        <div class="d-flex justify-content-around gap-4 my-3">
+                            <div class="bln-content d-flex flex-column align-items-center">
+                                <div class="news-extra d-flex justify-content-between align-items-center w-100">
+                                    <div class="news-ex-date d-flex align-content-center gap-2">
+                                        <i class="bi bi-calendar-check"></i>
+                                        <span>28/06/1404</span>
+                                    </div>
+                                    <div class="news-ex-category d-flex align-content-center gap-2">
+                                        <i class="bi bi-bookmark-check"></i>
+                                        <span>فرهنگی</span>
+                                    </div>
+                                </div>
+                                <div class="bln-title mt-3">
+                                    برگزاری آیین گرامیداشت عید غدیرم خم در ساوه
+                                </div>
+                            </div>
+                            <div class="bln-img">
+                                <img class="img-fluid rounded shadow-sm" src="resources/images/last-event-pic1.jpeg" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <a href="#" class="btn btn-outline-warning shadow-sm w-100 mt-3">مشاهده تمامی اخبار</a>
+            </div>
+
+            <div class="blog-last-news p-3 shadow-lg mt-3">
+                <div class="blog-last-news-title-wrapper d-flex align-content-center gap-3">
+                    <i class="bi bi-chat-square-heart"></i>
+                    <span>آخرین رویدادها</span>
+                </div>
+                <div class="bls-separator shadow-lg"></div>
+                <div class="blog-last-news-wrapper d-flex flex-column gap-1">
+                    <a href="#" class="blog-last-news-item text-decoration-none">
+                        <div class="d-flex justify-content-around gap-4 my-3">
+                            <div class="bln-content d-flex flex-column align-items-center">
+                                <div class="news-extra d-flex justify-content-between align-items-center w-100">
+                                    <div class="news-ex-date d-flex align-content-center gap-2">
+                                        <i class="bi bi-calendar-check"></i>
+                                        <span>28/06/1404</span>
+                                    </div>
+                                    <div class="news-ex-category d-flex align-content-center gap-2">
+                                        <i class="bi bi-bookmark-check"></i>
+                                        <span>فرهنگی</span>
+                                    </div>
+                                </div>
+                                <div class="bln-title mt-3">
+                                    برگزاری آیین گرامیداشت عید غدیرم خم در ساوه
+                                </div>
+                            </div>
+                            <div class="bln-img">
+                                <img class="img-fluid rounded shadow-sm" src="resources/images/last-event-pic1.jpeg" alt="">
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="blog-last-news-item text-decoration-none">
+                        <div class="d-flex justify-content-around gap-4 my-3">
+                            <div class="bln-content d-flex flex-column align-items-center">
+                                <div class="news-extra d-flex justify-content-between align-items-center w-100">
+                                    <div class="news-ex-date d-flex align-content-center gap-2">
+                                        <i class="bi bi-calendar-check"></i>
+                                        <span>28/06/1404</span>
+                                    </div>
+                                    <div class="news-ex-category d-flex align-content-center gap-2">
+                                        <i class="bi bi-bookmark-check"></i>
+                                        <span>فرهنگی</span>
+                                    </div>
+                                </div>
+                                <div class="bln-title mt-3">
+                                    برگزاری آیین گرامیداشت عید غدیرم خم در ساوه
+                                </div>
+                            </div>
+                            <div class="bln-img">
+                                <img class="img-fluid rounded shadow-sm" src="resources/images/last-event-pic1.jpeg" alt="">
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="blog-last-news-item text-decoration-none">
+                        <div class="d-flex justify-content-around gap-4 my-3">
+                            <div class="bln-content d-flex flex-column align-items-center">
+                                <div class="news-extra d-flex justify-content-between align-items-center w-100">
+                                    <div class="news-ex-date d-flex align-content-center gap-2">
+                                        <i class="bi bi-calendar-check"></i>
+                                        <span>28/06/1404</span>
+                                    </div>
+                                    <div class="news-ex-category d-flex align-content-center gap-2">
+                                        <i class="bi bi-bookmark-check"></i>
+                                        <span>فرهنگی</span>
+                                    </div>
+                                </div>
+                                <div class="bln-title mt-3">
+                                    برگزاری آیین گرامیداشت عید غدیرم خم در ساوه
+                                </div>
+                            </div>
+                            <div class="bln-img">
+                                <img class="img-fluid rounded shadow-sm" src="resources/images/last-event-pic1.jpeg" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <a href="#" class="btn btn-outline-warning shadow-sm w-100 mt-3">مشاهده تمامی اخبار</a>
+            </div>
+        </div>
+        <div class="col-xl-9">
+            <div class="blog-news-category shadow-lg w-100">
+                <div class="blog-category-wrapper d-flex align-items-center gap-2">
+                    <a href="#" class="blog-category-item bci-active text-decoration-none d-flex align-content-center gap-2">
+                        <i class="bi bi-newspaper d-flex"></i>
+                        <span>آخرین اخبار</span>
+                    </a>
+
+                    <a href="#" class="blog-category-item text-decoration-none d-flex align-content-center gap-2">
+                        <i class="bi bi-chat-square-heart"></i>
+                        <span>آخرین رویدادها</span>
+                    </a>
+
+                    <a href="#" class="blog-category-item text-decoration-none d-flex align-content-center gap-2">
+                        <i class="bi bi-camera"></i>
+                        <span>گزارشات تصویری</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="last-news-wrapper row g-4 mt-1">
+                {% for article in article_page_obj %}
+                <div class="col-12 col-md-4 lnw">
+                    <div class="news-item shadow-lg d-flex flex-column p-3">
+                        <a href="#" class="text-decoration-none position-relative">
+                            <div class="d-flex justify-content-between position-absolute w-100 px-2 mt-2">
+                                {% if article.categories.first %}
+                                <div class="news-category rounded-5 d-flex align-content-center gap-2">
+                                    <i class="bi bi-bookmark-check"></i>
+                                    <span>{{ article.categories.first.title }}</span>
+                                </div>
+                                {% endif %}
+
+                                <div class="news-date d-flex align-content-center rounded-5 gap-2">
+                                    <span>{{ article.created_at|to_jalali:'%Y/%m/%d' }}</span>
+                                    <i class="bi bi-calendar2-check"></i>
+                                </div>
+                            </div>
+                            {% if article.featured_image %}
+                            <img src="{{ article.featured_image.url }}" class="news-item-img img-fluid shadow-sm rounded" alt="{{ article.title }}">
+                            {% endif %}
+                        </a>
+                        <h3 class="news-title mt-3">
+                            {{ article.title }}
+                        </h3>
+                        <div class="news-excerpt mt-2">
+                            {% if article.summary %}
+                                {{ article.summary|truncatechars:150 }}
+                            {% else %}
+                                {{ article.content|truncatechars:150 }}
+                            {% endif %}
+                        </div>
+                        <a href="#" class="news-read d-flex align-content-center justify-content-end text-decoration-none gap-2 mt-2">
+                            <span>مطالعه بیشتر</span>
+                            <i class="bi bi-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-center">خبری برای نمایش وجود ندارد</p>
+                {% endfor %}
+            </div>
+
+            {% if article_page_obj.has_other_pages %}
+            <nav class="page-nav mt-5">
+                <ul class="pagination justify-content-center">
+                    {% if article_page_obj.has_previous %}
+                        <li class="page-item">
+                            <a href="?page={{ article_page_obj.previous_page_number }}" class="page-link" aria-label="صفحه قبلی">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <span class="page-link" aria-hidden="true">&laquo;</span>
+                        </li>
+                    {% endif %}
+
+                    {% for num in article_page_obj.paginator.page_range %}
+                        <li class="page-item {% if article_page_obj.number == num %} active {% endif %}">
+                            {% if article_page_obj.number == num %}
+                                <a class="page-link">
+                                    {{ num }}
+                                </a>
+                            {% else %}
+                                <a href="?page={{ num }}" class="page-link">
+                                    {{ num }}
+                                </a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+
+                    {% if article_page_obj.has_next %}
+                        <li class="page-item">
+                            <a href="?page={{ article_page_obj.next_page_number }}" class="page-link" aria-label="next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <span class="page-link" aria-hidden="true">&raquo;</span>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+        </div>
+    </div>
+</main>
+
+{% endblock body %}

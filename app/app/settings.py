@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     # project apps
     'home.apps.HomeConfig',
     'blog.apps.BlogConfig',
+    # external apps
+    'jalali_date',
 ]
 
 MIDDLEWARE = [
