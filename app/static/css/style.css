@@ -891,11 +891,13 @@ nav.navbar {
 }
 
 .bln-img {
-    width: 250px;
+    width: 180px;
+    min-width: 180px;
 }
 
-.bln-img {
+.bln-img img {
     object-fit: cover;
+    object-position: center;
 }
 
 .news-ex-category {

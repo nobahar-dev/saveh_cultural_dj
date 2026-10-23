@@ -1,21 +1,11 @@
+{% load static %}
 <section class="blog-hero">
     <div class="hero-title-area d-flex flex-column justify-content-center">
-        <nav class="my-breadcrumb" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="#">
-                        <i class="bi bi-house-check"></i>
-                        <span>صفحه اصلی</span>
-                    </a>
-                </li>
-                <li class="breadcrumb-item">
-                    <span class="ms-2">آخرید اخبار و رویدادها</span>
-                </li>
-            </ol>
-        </nav>
+        {% comment %} breadcrumbs {% endcomment %}
+        {% include "breadcrumbs.html" %}
 
         <div class="hero-title d-flex align-items-center gap-3 mt-4">
-            <img src="resources/images/last-news-icon.png" alt="">
+            <img src="{% static "images/last-news-icon.png" %}" alt="سازمان فرهنگی هنری ورزشی شهرداری ساوه">
             <span>آخرین اخبار و رویدادها</span>
         </div>
         <div class="hero-separator mt-4"></div>
