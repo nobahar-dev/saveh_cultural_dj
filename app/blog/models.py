@@ -78,3 +78,19 @@ class ArticleImage(models.Model):
         
     def __str__(self):
         return f"{self.article.title} - تصویر {self.pk}"
+    
+    
+class Comment(models.Model):
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='comments', verbose_name='مقاله')
+    full_name = models.CharField(max_length=200, verbose_name='نام و نام خانوادگی')
+    text = models.TextField(verbose_name='متن نظر')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ارسال')
+    is_approved = models.BooleanField(default=False, verbose_name='تایید شده')
+    
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = 'نظر'
+        verbose_name_plural = 'نظرات'
+    
+    def __str__(self):
+        return f"{self.full_name} - {self.article.title}"

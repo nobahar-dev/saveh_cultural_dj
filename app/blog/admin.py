@@ -27,5 +27,13 @@ class ArticleAdmin(admin.ModelAdmin):
     
 @admin.register(ArticleImage)
 class ArticleImageAdmin(admin.ModelAdmin):
-    list_display = ('article', 'order', 'caption')
+    list_display = ('article', 'caption')
     list_filter = ('article', )
+    
+    
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('full_name', 'article', 'created_at', 'is_approved')
+    search_fields = ('full_name', 'created_at', 'article__title')
+    list_editable = ('is_approved', )
+    ordering = ('-created_at', )

@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.core.paginator import Paginator
+from django.contrib import messages
 from .models import *
+from .forms import *
 
 
 def blog(request):
@@ -49,4 +51,66 @@ def blog(request):
 
 
 def article_detail(request, slug):
-    return render(request, 'blog/detail.html')
+    article = get_object_or_404(Article, slug=slug, status=Article.Status.PUBLISHED)
+    article_gallery = ArticleImage.objects.filter(article=article).order_by('-order')
+    comments = Comment.objects.filter(article=article, is_approved=True)
+    last_news = Article.objects.filter(article_type=Article.ArticleType.NEWS, status=Article.Status.PUBLISHED).order_by('-created_at')[:4]
+    last_events = Article.objects.filter(article_type=Article.ArticleType.EVENTS, status=Article.Status.PUBLISHED).order_by('-created_at')[:4]
+    
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.article = article
+            comment.is_approved = False
+            comment.save()
+            messages.success(request, 'نظر شما با موفقیت ثبت شد و پس از تایید نمایش داده می شود.')
+            return redirect('blog:article_detail', slug=article.slug)
+    else:
+        comment_form = CommentForm()
+    
+    type_info = {
+        Article.ArticleType.NEWS: {
+            'title': 'آخرین اخبار',
+            'type': 'news'
+        },
+        Article.ArticleType.EVENTS: {
+            'title': 'آخرین رویدادها',
+            'type': 'events'
+        },
+        Article.ArticleType.GALLERIES: {
+            'title': 'گزارشات تصویری',
+            'type': 'galleries'
+        }
+    }
+    
+    article_info = type_info.get(article.ArticleType, {
+        'title': 'آخرین اخبار و رویدادها',
+        'type': 'all'
+    })
+    
+    breadcrumbs = [
+        {
+            'title': 'صفحه اصلی',
+            'url': reverse('home:home')
+        },
+        {
+            'title': article_info['title'],
+            'url': reverse('blog:blog') + '?type=' + article_info['type']
+        },
+        {
+            'title': article.title,
+            'url': ''
+        }
+    ]
+    
+    context = {
+        'article': article,
+        'article_gallery': article_gallery,
+        'comments': comments,
+        'last_news': last_news,
+        'last_events': last_events,
+        'breadcrumbs': breadcrumbs,
+        'comment_form': comment_form
+    }
+    return render(request, 'blog/detail.html', context)
