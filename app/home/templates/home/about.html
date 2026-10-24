@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} سازمان فرهنگی هنری ورزشی شهرداری ساوه {% endblock title %}
+
+{% block body %}
+    {% comment %} hero banner {% endcomment %}
+    {% include "home/about_hero.html" %}
+
+   <main class="main">
+    <div class="container">
+        <section class="overview mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="sec-info">
+                        <div class="sec-intro d-flex align-items-center">
+                            معرفی سازمان
+                        </div>
+                        <div class="sec-title mt-2">
+                            سازمان فرهنگی اجتماعی ورزشی شهرداری ساوه    
+                        </div>
+                    </div>
+
+                    <div class="overview-content mt-2">
+                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="cultural-img">
+                        <img class="img-fluid rounded shadow-lg" src="{% static "images/cultural_organ.jpeg" %}" alt="سازمان فرنگی هنری اجتماعی ورزشی شهرداری ساوه">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="missions mt-5">
+            <a class="section-title-wrapper text-decoration-none d-flex flex-column align-items-center justify-content-center gap-2">
+                <img src="{% static 'images/missions.png' %}" alt="سازمان فرنگی هنری اجتماعی ورزشی شهرداری ساوه">
+                <div class="section-title d-flex align-items-center justify-content-center gap-4">
+                    <span>ماموریت و چشم انداز</span>
+                </div>
+            </a>
+
+            <div class="missions-wrapper shadow-lg p-3 d-flex align-items-center justify-content-center flex-wrap flex-lg-nowrap mt-4 gap-2">
+                <div class="mission-item d-flex flex-column justify-content-center align-items-center">
+                    <div class="mission-icon">
+                        <i class="bi bi-award"></i>
+                    </div>
+                    <div class="mission-title text-center">
+                        ماموریت
+                    </div>
+                    <div class="mission-content mt-2 text-center">
+                        ایجاد بستر مناسب برای شکوفایی فرهنگ، مشارکت اجتماعی و توسعه ورزش همگانی در شهر ساوه
+                    </div>
+                </div>
+                <div class="mission-separator d-none d-lg-block"></div>
+
+                <div class="mission-item d-flex flex-column justify-content-center align-items-center">
+                    <div class="mission-icon">
+                        <i class="bi bi-eye"></i>
+                    </div>
+                    <div class="mission-title text-center">
+                        چشم انداز
+                    </div>
+                    <div class="mission-content mt-2 text-center">
+                        ساوه، شهری پویا، سالم، فرهنگی، و برخوردار از نشاط اجتماعی و ورزشی
+                    </div>
+                </div>
+                <div class="mission-separator d-none d-lg-block"></div>
+
+                <div class="mission-item d-flex flex-column justify-content-center align-items-center">
+                    <div class="mission-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <div class="mission-title text-center">
+                        ارزش ها
+                    </div>
+                    <div class="mission-content mt-2 text-center">
+                        عدالت فرهنگی، مشارکت اجتماعی، تعامل و همدلی، شفافیت و پاسخگویی
+                    </div>
+                </div>
+                <div class="mission-separator d-none d-lg-block"></div>
+
+                <div class="mission-item d-flex flex-column justify-content-center align-items-center">
+                    <div class="mission-icon">
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <div class="mission-title text-center">
+                        اهداف کلان
+                    </div>
+                    <div class="mission-content mt-2 text-center">
+                        ارتقای کیفیت برنامه های فرهنگی و ورزشی، توسعه زیرساخت ها، افزایش مشارکت مردمی
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="one-eye mt-5">
+            <a class="section-title-wrapper text-decoration-none d-flex flex-column align-items-center justify-content-center gap-2">
+                <img src="{% static "images/one_eye.png" %}" alt="سازمان فرنگی هنری اجتماعی ورزشی شهرداری ساوه">
+                <div class="section-title d-flex align-items-center justify-content-center gap-4">
+                    <span>در یک نگاه</span>
+                </div>
+            </a>
+
+            <div class="statistics-wrapper shadow-lg p-3 d-flex align-items-center justify-content-around flex-wrap mt-4 gap-2">
+                <div class="stat-item d-flex flex-column justify-content-center align-items-center">
+                    <div class="stat-icon">
+                        <i class="bi bi-book"></i>
+                    </div>
+                    <div class="stat-title text-center">
+                       تعداد برنامه های سالانه
+                    </div>
+                    <div class="stat-content mt-2 text-center" id="stat1">0</div>
+                </div>
+                <div class="stat-separator d-none d-lg-block"></div>
+
+                <div class="stat-item d-flex flex-column justify-content-center align-items-center">
+                    <div class="stat-icon">
+                        <i class="bi bi-person-check"></i>
+                    </div>
+                    <div class="stat-title text-center">
+                        مشارکت ها
+                    </div>
+                    <div class="stat-content mt-2 text-center" id="stat2">0</div>
+                </div>
+                <div class="stat-separator d-none d-lg-block"></div>
+
+                <div class="stat-item d-flex flex-column justify-content-center align-items-center">
+                    <div class="stat-icon">
+                        <i class="bi bi-bank"></i>
+                    </div>
+                    <div class="stat-title text-center">
+                        فرهنگسراها
+                    </div>
+                    <div class="stat-content mt-2 text-center" id="stat3">0</div>
+                </div>
+                <div class="stat-separator d-none d-lg-block"></div>
+
+                <div class="stat-item d-flex flex-column justify-content-center align-items-center">
+                    <div class="stat-icon">
+                        <i class="bi bi-dribbble"></i>
+                    </div>
+                    <div class="stat-title text-center">
+                        مجموعه های ورزشی
+                    </div>
+                    <div class="stat-content mt-2 text-center" id="stat4">0</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CEO word -->
+     <section class="ceo container mt-5 mb-5">
+        <a class="section-title-wrapper text-decoration-none d-flex flex-column align-items-center justify-content-center gap-2">
+            <img src="{% static 'images/ceo-icon.png' %}" alt="سازمان فرنگی هنری اجتماعی ورزشی شهرداری ساوه">
+            <div class="section-title d-flex align-items-center justify-content-center gap-4">
+                <span>سخن مدیرعامل</span>
+            </div>
+            <div class="section-subtitle">
+                فرهنگ و نشاط اجتماعی، از مهم‌ترین ارکان توسعه و پیشرفت هر شهر است.
+            </div>
+        </a>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="ceo-img-wrapper rounded-5 shadow-sm">
+                    <img class="img-fluid shadow-lg" src="{% static "images/ceo-img.jpeg" %}" alt="سازمان فرنگی هنری اجتماعی ورزشی شهرداری ساوه">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="ceo-message">
+                    <div class="ceo-message-title mt-3">
+                        با هم، برای آینده بهتر
+                    </div>
+                    <div class="ceo-message-content mt-3">
+                        سازمان فرهنگی، اجتماعی و ورزشی شهرداری ساوه با هدف ارتقای کیفیت زندگی شهروندان فعالیت می‌کند.
+                        تلاش ما بر گسترش برنامه‌های فرهنگی، اجتماعی و ورزشی و ایجاد فرصت‌های برابر برای همه شهروندان است.
+                        حمایت از جوانان، توسعه ورزش همگانی و تقویت مشارکت اجتماعی، از اولویت‌های این مجموعه به شمار می‌رود.
+                        همچنین پاسداشت هویت، فرهنگ و ظرفیت‌های ارزشمند شهر ساوه را وظیفه‌ای مهم می‌دانیم.
+                        امیدواریم با همراهی شهروندان و همکاری مجموعه مدیریت شهری، شهری پویا، بانشاط و امیدآفرین داشته باشیم.
+                        در این مسیر، خدمت به شهروندان و حرکت در جهت توسعه همه‌جانبه ساوه، مهم‌ترین هدف ماست.
+                    </div>
+                    <div class="ceo-sign d-flex flex-column align-items-end w-100">
+                        <div class="ceo-name text-center">رضا یزدی</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- CEO word -->
+   </main>
+
+{% endblock body %}

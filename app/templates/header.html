@@ -10,7 +10,7 @@
     </div>
 
     <div class="site-logo d-flex align-items-center justify-content-center pt-3 pb-5">
-        <a href="#">
+        <a href="{% url "home:home" %}">
             <img class="img-fluid" src="{% static "images/site_logo.png" %}" alt="سازمان فرهنگی هنری شهرداری ساوه">
         </a>
     </div>
@@ -27,7 +27,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="blog.html" class="nav-link">اخبار</a>
+                            <a href="{% url 'blog:blog' %}" class="nav-link">اخبار</a>
                         </li>
 
                         <li class="nav-item">
@@ -43,7 +43,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="about.html" class="nav-link">درباره ما</a>
+                            <a href="{% url 'home:about' %}" class="nav-link">درباره ما</a>
                         </li>
 
                         <li class="nav-item">

@@ -1,0 +1,19 @@
+   {% load static %}
+   <!-- start of hero -->
+   <section class="about-hero">
+    <div class="hero-title-area d-flex flex-column justify-content-center">
+        {% comment %} breadcrumbs {% endcomment %}
+        {% include "breadcrumbs.html" %}
+
+        <div class="hero-title d-flex align-items-center gap-3 mt-4">
+            <img src="{% static 'images/about_icon.png' %}" alt="سازمان فرهنگی هنری ورزشی اجتماعی شهرداری ساوه">
+            <span>درباره ما</span>
+        </div>
+        <div class="hero-separator mt-4"></div>
+        <div class="hero-subtitle d-flex flex-column gap-1 mt-3 ps-3">
+            <span>معرفی سازمان فرهنگی اجتماعی ورزشی</span>
+            <span>شهرداری ساوه</span>
+        </div>
+    </div>
+   </section>
+   <!-- end of hero -->
