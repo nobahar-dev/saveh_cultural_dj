@@ -491,8 +491,8 @@ nav.navbar {
 }
 
 .news-item {
-    height: 370px;
-    min-height: 370px;
+    height: max-content;
+    max-height: 390px;
     overflow: hidden;
     color: #1a1a1a;
     border-radius: 15px;
@@ -516,7 +516,7 @@ nav.navbar {
 }
 
 .news-excerpt {
-    max-height: 50px;
+    max-height: max-content;
     font-family: 'sansdn_regular';
     font-size: 15px;
     text-align: justify;

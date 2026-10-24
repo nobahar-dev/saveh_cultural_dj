@@ -1,3 +1,4 @@
+   {% load static %}
    <!-- start of hero -->
    <section class="about-hero">
     <div class="hero-title-area d-flex flex-column justify-content-center">
@@ -5,7 +6,7 @@
         {% include "breadcrumbs.html" %}
 
         <div class="hero-title d-flex align-items-center gap-3 mt-4">
-            <img src="resources/images/ic_about_us.png" alt="">
+            <img src="{% static 'images/ic_about_us.png' %}" alt="سازمان فرهنگی اجتماعی ورزشی شهرداری ساوه">
             <span>تماس با ما</span>
         </div>
         <div class="hero-separator mt-4"></div>
