@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     # external apps
     'jalali_date',
+    'django_ckeditor_5',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django_admin_applist_order.middleware.AppListOrderMiddleware",
 ]
 
 ROOT_URLCONF = 'app.urls'
@@ -111,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fa'
 
 TIME_ZONE = 'Asia/Tehran'
 
@@ -138,5 +140,209 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 MAILERS = {
     'default': {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
+    },
+}
+
+# Admin app order
+ADMIN_APP_LIST = {
+    'order':{
+        'home': ['Slider',],
+        'blog': ['Article', 'Category', 'ArticleImage', 'Comment']
+    }
+}
+
+# CKEditor Configs
+CKEDITOR_5_FILE_UPLOAD_PERMISSION = "staff"
+CKEDITOR_5_MAX_FILE_SIZE = 200  # مگابایت
+
+CKEDITOR_5_CONFIGS = {
+    "default": {
+        "language": {
+            "ui": "fa",
+            "content": "fa",
+        },
+
+        "toolbar": {
+            "items": [
+                "undo",
+                "redo",
+                "|",
+                "heading",
+                "|",
+                "fontSize",
+                "fontColor",
+                "fontBackgroundColor",
+                "|",
+                "bold",
+                "italic",
+                "underline",
+                "strikethrough",
+                "removeFormat",
+                "|",
+                "alignment",
+                "|",
+                "bulletedList",
+                "numberedList",
+                "outdent",
+                "indent",
+                "|",
+                "link",
+                "insertImage",
+                "mediaEmbed",
+                "insertTable",
+                "blockQuote",
+                "horizontalLine",
+                "|",
+                "specialCharacters",
+                "sourceEditing",
+            ],
+            "shouldNotGroupWhenFull": True,
+        },
+
+        "heading": {
+            "options": [
+                {
+                    "model": "paragraph",
+                    "title": "پاراگراف",
+                    "class": "ck-heading_paragraph",
+                },
+                {
+                    "model": "heading1",
+                    "view": "h1",
+                    "title": "عنوان ۱",
+                    "class": "ck-heading_heading1",
+                },
+                {
+                    "model": "heading2",
+                    "view": "h2",
+                    "title": "عنوان ۲",
+                    "class": "ck-heading_heading2",
+                },
+                {
+                    "model": "heading3",
+                    "view": "h3",
+                    "title": "عنوان ۳",
+                    "class": "ck-heading_heading3",
+                },
+                {
+                    "model": "heading4",
+                    "view": "h4",
+                    "title": "عنوان ۴",
+                    "class": "ck-heading_heading4",
+                },
+            ],
+        },
+
+        "fontSize": {
+            "options": [
+                10,
+                12,
+                14,
+                "default",
+                18,
+                20,
+                24,
+                28,
+                32,
+                36,
+            ],
+            "supportAllValues": True,
+        },
+
+        "alignment": {
+            "options": [
+                "right",
+                "center",
+                "justify",
+                "left",
+            ],
+        },
+
+        "image": {
+            "toolbar": [
+                "imageTextAlternative",
+                "toggleImageCaption",
+                "imageStyle:inline",
+                "imageStyle:block",
+                "imageStyle:side",
+                "linkImage",
+            ],
+            "insert": {
+                "type": "auto",
+            },
+        },
+
+        "table": {
+            "contentToolbar": [
+                "tableColumn",
+                "tableRow",
+                "mergeTableCells",
+                "tableProperties",
+                "tableCellProperties",
+            ],
+        },
+
+        "link": {
+            "addTargetToExternalLinks": True,
+            "defaultProtocol": "https://",
+            "decorators": {
+                "openInNewTab": {
+                    "mode": "manual",
+                    "label": "باز شدن در زبانه جدید",
+                    "attributes": {
+                        "target": "_blank",
+                        "rel": "noopener noreferrer",
+                    },
+                },
+            },
+        },
+
+        "mediaEmbed": {
+            "previewsInData": True,
+        },
+
+        "blockToolbar": [
+            "paragraph",
+            "heading",
+            "|",
+            "bulletedList",
+            "numberedList",
+            "|",
+            "insertImage",
+            "insertTable",
+            "blockQuote",
+        ],
+
+        "placeholder": "متن مقاله را اینجا بنویسید...",
+
+        "imageUpload": {
+            "types": [
+                "jpeg",
+                "jpg",
+                "png",
+                "gif",
+                "webp",
+            ],
+        },
+    },
+    "summary": {
+        "language": {
+            "ui": "fa",
+            "content": "fa",
+        },
+        "toolbar": {
+            "items": [
+                "bold",
+                "italic",
+                "|",
+                "link",
+                "bulletedList",
+                "numberedList",
+                "undo",
+                "redo",
+            ],
+            "shouldNotGroupWhenFull": True,
+        },
+        "placeholder": "خلاصه کوتاهی از مقاله بنویسید...",
     },
 }

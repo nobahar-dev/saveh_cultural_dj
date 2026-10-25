@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load jalali_tags %}
 
 {% block title %} سازمان فرهنگی هنری ورزشی شهرداری ساوه {% endblock title %}
 
@@ -9,20 +10,17 @@
     <section class="slider">
         <div class="swiper slider-swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide position-relative">
-                    <div class="slider-text d-flex flex-column align-items-center justify-content-center">
-                        <div class="slider-title shadow-sm">عنوان متن آزمایشی تصویر</div>
-                        <div class="slider-subtitle shadow-sm mt-2 text-center">زیر عنوان متن آزمایشی انتخاب شده تصویر شهرستان ساوه</div>
-                    </div>
-                    <img class="img-fluid" src="{% static "images/slider-1.jpeg" %}" alt="">
-                </div>
-                <div class="swiper-slide position-relative">
-                    <div class="slider-text d-flex flex-column align-items-center justify-content-center">
-                        <div class="slider-title shadow-sm">عنوان متن آزمایشی تصویر</div>
-                        <div class="slider-subtitle shadow-sm mt-2 text-center">زیر عنوان متن آزمایشی انتخاب شده تصویر شهرستان ساوه</div>
-                    </div>
-                    <img class="img-fluid" src="{% static "images/slider-2.jpeg" %}" alt="">
-                </div>
+                {% if sliders %}
+                    {% for image in sliders %}
+                        <div class="swiper-slide position-relative">
+                            <div class="slider-text d-flex flex-column align-items-center justify-content-center">
+                                <div class="slider-title shadow-sm">{{ image.title }}</div>
+                                <div class="slider-subtitle shadow-sm mt-2 text-center">{{ image.subtitle }}</div>
+                            </div>
+                            <img class="img-fluid" src="{{ image.image.url }}" alt="{{ image.title }}">
+                        </div>
+                    {% endfor %}
+                {% endif %}
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -197,85 +195,25 @@
 
         <div class="swiper last-events-swiper pb-5 ">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="last-event-card rounded">
-                        <div class="last-event-front rounded">
-                            <a href="blog_detail.html" class="last-e-item text-decoration-none rounded shadow-sm">
-                                <img src="resources/images/last-event-pic1.jpeg" alt="">
-                            </a>
-                        </div>
+                {% if last_events %}
+                    {% for event in last_events %}
+                        <div class="swiper-slide">
+                            <div class="last-event-card rounded">
+                                <div class="last-event-front rounded">
+                                    <a href="blog_detail.html" class="last-e-item text-decoration-none rounded shadow-sm">
+                                        <img src="{{ event.featured_image.url }}" alt="{{ event.title }}">
+                                    </a>
+                                </div>
 
-                        <div class="last-event-back">
-                            <h5>عنوان رویداد</h5>
-                            <div class="mt-4">توضیحات انتخابی رویداد مورد نظر</div>
-                            <a href="blog_detail.html" class="btn btn-outline-warning mt-4">مشاهده بیشتر</a>
+                                <div class="last-event-back">
+                                    <h5>{{ event.title }}</h5>
+                                    <div class="mt-4">{{ event.summary|truncatechars:100 }}</div>
+                                    <a href="{% url 'blog:article_detail' slug=event.slug %}" class="btn btn-outline-warning mt-4">مشاهده بیشتر</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide">
-                    <div class="last-event-card rounded">
-                        <div class="last-event-front rounded">
-                            <a href="#" class="last-e-item text-decoration-none rounded shadow-sm">
-                                <img src="resources/images/last-event-pic2.jpeg" alt="">
-                            </a>
-                        </div>
-
-                        <div class="last-event-back">
-                            <h5>عنوان رویداد</h5>
-                            <div class="mt-4">توضیحات انتخابی رویداد مورد نظر</div>
-                            <a href="#" class="btn btn-outline-warning mt-4">مشاهده بیشتر</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide">
-                    <div class="last-event-card rounded">
-                        <div class="last-event-front rounded">
-                            <a href="#" class="last-e-item text-decoration-none rounded shadow-sm">
-                                <img src="resources/images/last-event-pic1.jpeg" alt="">
-                            </a>
-                        </div>
-
-                        <div class="last-event-back">
-                            <h5>عنوان رویداد</h5>
-                            <div class="mt-4">توضیحات انتخابی رویداد مورد نظر</div>
-                            <a href="#" class="btn btn-outline-warning mt-4">مشاهده بیشتر</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide">
-                    <div class="last-event-card rounded">
-                        <div class="last-event-front rounded">
-                            <a href="#" class="last-e-item text-decoration-none rounded shadow-sm">
-                                <img src="resources/images/last-event-pic2.jpeg" alt="">
-                            </a>
-                        </div>
-
-                        <div class="last-event-back">
-                            <h5>عنوان رویداد</h5>
-                            <div class="mt-4">توضیحات انتخابی رویداد مورد نظر</div>
-                            <a href="#" class="btn btn-outline-warning mt-4">مشاهده بیشتر</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide">
-                    <div class="last-event-card rounded">
-                        <div class="last-event-front rounded">
-                            <a href="#" class="last-e-item text-decoration-none rounded shadow-sm">
-                                <img src="resources/images/last-event-pic1.jpeg" alt="">
-                            </a>
-                        </div>
-
-                        <div class="last-event-back">
-                            <h5>عنوان رویداد</h5>
-                            <div class="mt-4">توضیحات انتخابی رویداد مورد نظر</div>
-                            <a href="#" class="btn btn-outline-warning mt-4">مشاهده بیشتر</a>
-                        </div>
-                    </div>
-                </div>
+                    {% endfor %}
+                {% endif %}
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -304,72 +242,30 @@
                         </div>
 
                         <div class="most-item-news-wrapper">
-                            <a href="blog_detail.html" class="most-news-item text-decoration-none d-block px-3 pt-3">
-                                <div class="m-news-content d-flex align-items-center">
-                                    <img class="img-fluid rounded shadow-sm" src="resources/images/last-event-pic1.jpeg" alt="">
-                                    <div class="m-news-title ms-2">
-                                        عملیات بهسازی و نوسازی میدان شهرداری
-                                    </div>
-                                </div>
-                                <div class="m-news-extra d-flex justify-content-end mt-2">
-                                    <p>28/06/1405</p>
-                                    <div class="ms-4">
-                                        <span>250</span>
-                                        <i class="bi bi-eye"></i>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="most-news-item text-decoration-none d-block px-3 pt-3">
-                                <div class="m-news-content d-flex align-items-center">
-                                    <img class="img-fluid rounded shadow-sm" src="resources/images/last-event-pic1.jpeg" alt="">
-                                    <div class="m-news-title ms-2">
-                                        عملیات بهسازی و نوسازی میدان شهرداری
-                                    </div>
-                                </div>
-                                <div class="m-news-extra d-flex justify-content-end mt-2">
-                                    <p>28/06/1405</p>
-                                    <div class="ms-4">
-                                        <span>250</span>
-                                        <i class="bi bi-eye"></i>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="most-news-item text-decoration-none d-block px-3 pt-3">
-                                <div class="m-news-content d-flex align-items-center">
-                                    <img class="img-fluid rounded shadow-sm" src="resources/images/last-event-pic1.jpeg" alt="">
-                                    <div class="m-news-title ms-2">
-                                        عملیات بهسازی و نوسازی میدان شهرداری
-                                    </div>
-                                </div>
-                                <div class="m-news-extra d-flex justify-content-end mt-2">
-                                    <p>28/06/1405</p>
-                                    <div class="ms-4">
-                                        <span>250</span>
-                                        <i class="bi bi-eye"></i>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="blog_detail.html" class="most-news-item text-decoration-none d-block px-3 pt-3">
-                                <div class="m-news-content d-flex align-items-center">
-                                    <img class="img-fluid rounded shadow-sm" src="resources/images/last-event-pic1.jpeg" alt="">
-                                    <div class="m-news-title ms-2">
-                                        عملیات بهسازی و نوسازی میدان شهرداری
-                                    </div>
-                                </div>
-                                <div class="m-news-extra d-flex justify-content-end mt-2">
-                                    <p>28/06/1405</p>
-                                    <div class="ms-4">
-                                        <span>250</span>
-                                        <i class="bi bi-eye"></i>
-                                    </div>
-                                </div>
-                            </a>
+                            {% if most_news %}
+                                {% for news in most_news %}
+                                    <a href="{% url 'blog:article_detail' slug=news.slug %}" class="most-news-item text-decoration-none d-block px-3 pt-3">
+                                        <div class="m-news-content d-flex align-items-center">
+                                            {% if news.featured_image %}
+                                                <img class="img-fluid rounded shadow-sm" src="{{ news.featured_image.url }}" alt="{{ news.title }}">
+                                            {% endif %}
+                                            <div class="m-news-title ms-2">
+                                                {{ news.title }}
+                                            </div>
+                                        </div>
+                                        <div class="m-news-extra d-flex justify-content-end mt-2">
+                                            <p>{{ news.created_at|to_jalali:'%Y/%m/%d' }}</p>
+                                            <div class="ms-4">
+                                                <span>{{ news.view_count }}</span>
+                                                <i class="bi bi-eye"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                {% endfor %}
+                            {% endif %}
                         </div>
 
-                        <a href="#" class="btn btn-outline-warning mx-5 my-3">مشاهده همه اخبار</a>
+                        <a href="{% url 'blog:blog' %}?type=news" class="btn btn-outline-warning mx-5 my-3">مشاهده همه اخبار</a>
                     </div>
                 </div>
                 <div class="col-xl-9 col-12">
@@ -810,30 +706,25 @@
                 <span>سخن مدیرعامل</span>
             </div>
             <div class="section-subtitle">
-                فرهنگ و نشاط اجتماعی، از مهم‌ترین ارکان توسعه و پیشرفت هر شهر است.
+                {{ ceo_speech.slogan }}
             </div>
         </a>
         <div class="row mt-5">
             <div class="col-md-6">
                 <div class="ceo-img-wrapper rounded-5 shadow-sm">
-                    <img class="img-fluid shadow-lg" src="{% static "images/ceo-img.jpeg" %}" alt="سازمان فرهنگی هنری اجتماعی ورزشی شهرداری ساوه">
+                    <img class="img-fluid shadow-lg" src="{{ ceo_speech.image.url }}" alt="سازمان فرهنگی هنری اجتماعی ورزشی شهرداری ساوه">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="ceo-message">
                     <div class="ceo-message-title mt-3">
-                        با هم، برای آینده بهتر
+                        {{ ceo_speech.title }}
                     </div>
                     <div class="ceo-message-content mt-3">
-                        سازمان فرهنگی، اجتماعی و ورزشی شهرداری ساوه با هدف ارتقای کیفیت زندگی شهروندان فعالیت می‌کند.
-                        تلاش ما بر گسترش برنامه‌های فرهنگی، اجتماعی و ورزشی و ایجاد فرصت‌های برابر برای همه شهروندان است.
-                        حمایت از جوانان، توسعه ورزش همگانی و تقویت مشارکت اجتماعی، از اولویت‌های این مجموعه به شمار می‌رود.
-                        همچنین پاسداشت هویت، فرهنگ و ظرفیت‌های ارزشمند شهر ساوه را وظیفه‌ای مهم می‌دانیم.
-                        امیدواریم با همراهی شهروندان و همکاری مجموعه مدیریت شهری، شهری پویا، بانشاط و امیدآفرین داشته باشیم.
-                        در این مسیر، خدمت به شهروندان و حرکت در جهت توسعه همه‌جانبه ساوه، مهم‌ترین هدف ماست.
+                        {{ ceo_speech.message|safe }}
                     </div>
                     <div class="ceo-sign d-flex flex-column align-items-end w-100">
-                        <div class="ceo-name text-center">رضا یزدی</div>
+                        <div class="ceo-name text-center">{{ ceo_speech.ceo_name }}</div>
                     </div>
                 </div>
             </div>

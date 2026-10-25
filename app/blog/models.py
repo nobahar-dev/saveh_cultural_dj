@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.utils.text import slugify
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 class Article(models.Model):
@@ -15,8 +16,8 @@ class Article(models.Model):
     
     title = models.CharField(max_length=250, verbose_name='عنوان مقاله')
     slug = models.SlugField(max_length=280, unique=True, blank=True, allow_unicode=True, verbose_name='شناسه آدرس')
-    summary = models.CharField(max_length=500, verbose_name='خلاصه مقاله')
-    content = models.TextField(verbose_name='متن مقاله')
+    summary = CKEditor5Field(max_length=500, verbose_name='خلاصه مقاله', config_name='summary')
+    content = CKEditor5Field(verbose_name='متن مقاله', config_name='default')
     featured_image = models.ImageField(upload_to='blog/featured', verbose_name='تصویر شاخص')
     article_type = models.CharField(max_length=10, choices=ArticleType.choices, default=ArticleType.NEWS, verbose_name="نوع مقاله")
     categories = models.ManyToManyField('Category', related_name='articles', verbose_name='دسته بندی ها')

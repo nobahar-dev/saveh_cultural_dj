@@ -1,4 +1,5 @@
 from django.db import models
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 class Slider(models.Model):
@@ -16,3 +17,26 @@ class Slider(models.Model):
         
     def __str__(self):
         return self.title
+    
+    
+class ManagerSpeech(models.Model):
+    title = models.CharField(max_length=250, default='سخن مدیر', verbose_name='عنوان')
+    message = CKEditor5Field(default='متن سخن مدیر', verbose_name='سخن مدیر', config_name='default')
+    slogan = models.CharField(max_length=400, default='شعار سازمان', verbose_name='شعار سازمان')
+    ceo_name = models.CharField(max_length=250, default='رضا یزدی', verbose_name='نام مدیرعامل')
+    image = models.ImageField(upload_to='manager/', verbose_name='تصویر مدیر')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='تاریخ ویرایش')
+    
+    def __str__(self):
+        return self.title
+    
+    def save(self, *args, **kwargs):
+        self.pk = 1
+        super().save(*args, **kwargs)
+        
+    def delete(self, *args, **kwargs):
+        pass
+    
+    class Meta:
+        verbose_name = 'سخن مدیر'
+        verbose_name_plural = 'سخن مدیر'

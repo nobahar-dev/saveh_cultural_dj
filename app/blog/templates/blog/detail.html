@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="article-content">
-                    {{ article.content }}
+                    {{ article.content|safe }}
                 </div>
 
                 {% if article_gallery %}
