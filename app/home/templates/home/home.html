@@ -270,179 +270,40 @@
                 </div>
                 <div class="col-xl-9 col-12">
                     <div class="last-news-wrapper row g-4 mt-1">
-                        <div class="col-12 col-md-4">
-                            <div href="#" class="news-item shadow-lg text-decoration-none d-flex flex-column p-3">
-                                <a href="#" class="text-decoration-none position-relative">
-                                    <div class="d-flex justify-content-between position-absolute w-100 px-2 mt-2">
-                                        <div class="news-category rounded-5 d-flex align-content-center gap-2">
-                                            <i class="bi bi-bookmark-check"></i>
-                                            <span>ورزشی</span>
-                                        </div>
+                        {% if last_news %}
+                            {% for news in last_news %}
+                                <div class="col-12 col-md-4 lnw">
+                                    <div class="news-item shadow-lg text-decoration-none d-flex flex-column p-3">
+                                        <a href="{% url 'blog:article_detail' slug=news.slug %}" class="text-decoration-none position-relative">
+                                            <div class="d-flex justify-content-between position-absolute w-100 px-2 mt-2">
+                                                <div class="news-category rounded-5 d-flex align-content-center gap-2">
+                                                    <i class="bi bi-bookmark-check"></i>
+                                                    <span>{{ news.categories.first.title }}</span>
+                                                </div>
 
-                                        <div class="news-date d-flex align-content-center rounded-5 gap-2">
-                                            <span>10/07/1405</span>
-                                            <i class="bi bi-calendar2-check"></i>
+                                                <div class="news-date d-flex align-content-center rounded-5 gap-2">
+                                                    <span>{{ news.created_at|to_jalali:'%Y/%m/%d' }}</span>
+                                                    <i class="bi bi-calendar2-check"></i>
+                                                </div>
+                                            </div>
+                                            {% if news.featured_image %}
+                                                <img src="{{ news.featured_image.url }}" class="img-fluid news-item-img shadow-sm rounded" alt="{{ news.title }}">
+                                            {% endif %}
+                                        </a>
+                                        <h3 class="news-title mt-3">
+                                            {{ news.title }}
+                                        </h3>
+                                        <div class="news-excerpt mt-2">
+                                            {{ news.summary|truncatechars:150 }}
                                         </div>
+                                        <a href="{% url 'blog:article_detail' slug=news.slug %}" class="news-read d-flex align-content-center justify-content-end text-decoration-none gap-2 mt-2">
+                                            <span>مطالعه بیشتر</span>
+                                            <i class="bi bi-arrow-left"></i>
+                                        </a>
                                     </div>
-                                    <img src="resources/images/last-event-pic2.jpeg" class="img-fluid shadow-sm rounded" alt="">
-                                </a>
-                                <h3 class="news-title mt-3">
-                                    افتتاح مسابقات فوتسال ادارات ساوه
-                                </h3>
-                                <div class="news-excerpt mt-2">
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
                                 </div>
-                                <a href="#" class="news-read d-flex align-content-center justify-content-end text-decoration-none gap-2 mt-2">
-                                    <span>مطالعه بیشتر</span>
-                                    <i class="bi bi-arrow-left"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-4">
-                            <div href="blog_detail.html" class="news-item shadow-lg text-decoration-none d-flex flex-column p-3">
-                                <a href="#" class="text-decoration-none position-relative">
-                                    <div class="d-flex justify-content-between position-absolute w-100 px-2 mt-2">
-                                        <div class="news-category rounded-5 d-flex align-content-center gap-2">
-                                            <i class="bi bi-bookmark-check"></i>
-                                            <span>ورزشی</span>
-                                        </div>
-
-                                        <div class="news-date d-flex align-content-center rounded-5 gap-2">
-                                            <span>10/07/1405</span>
-                                            <i class="bi bi-calendar2-check"></i>
-                                        </div>
-                                    </div>
-                                    <img src="resources/images/last-event-pic2.jpeg" class="img-fluid shadow-sm rounded" alt="">
-                                </a>
-                                <h3 class="news-title mt-3">
-                                    افتتاح مسابقات فوتسال ادارات ساوه
-                                </h3>
-                                <div class="news-excerpt mt-2">
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                                </div>
-                                <a href="#" class="news-read d-flex align-content-center justify-content-end text-decoration-none gap-2 mt-2">
-                                    <span>مطالعه بیشتر</span>
-                                    <i class="bi bi-arrow-left"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-4">
-                            <div href="#" class="news-item shadow-lg text-decoration-none d-flex flex-column p-3">
-                                <a href="#" class="text-decoration-none position-relative">
-                                    <div class="d-flex justify-content-between position-absolute w-100 px-2 mt-2">
-                                        <div class="news-category rounded-5 d-flex align-content-center gap-2">
-                                            <i class="bi bi-bookmark-check"></i>
-                                            <span>ورزشی</span>
-                                        </div>
-
-                                        <div class="news-date d-flex align-content-center rounded-5 gap-2">
-                                            <span>10/07/1405</span>
-                                            <i class="bi bi-calendar2-check"></i>
-                                        </div>
-                                    </div>
-                                    <img src="resources/images/last-event-pic2.jpeg" class="img-fluid shadow-sm rounded" alt="">
-                                </a>
-                                <h3 class="news-title mt-3">
-                                    افتتاح مسابقات فوتسال ادارات ساوه
-                                </h3>
-                                <div class="news-excerpt mt-2">
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                                </div>
-                                <a href="#" class="news-read d-flex align-content-center justify-content-end text-decoration-none gap-2 mt-2">
-                                    <span>مطالعه بیشتر</span>
-                                    <i class="bi bi-arrow-left"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-4">
-                            <div href="blog_detail.html" class="news-item shadow-lg text-decoration-none d-flex flex-column p-3">
-                                <a href="#" class="text-decoration-none position-relative">
-                                    <div class="d-flex justify-content-between position-absolute w-100 px-2 mt-2">
-                                        <div class="news-category rounded-5 d-flex align-content-center gap-2">
-                                            <i class="bi bi-bookmark-check"></i>
-                                            <span>ورزشی</span>
-                                        </div>
-
-                                        <div class="news-date d-flex align-content-center rounded-5 gap-2">
-                                            <span>10/07/1405</span>
-                                            <i class="bi bi-calendar2-check"></i>
-                                        </div>
-                                    </div>
-                                    <img src="resources/images/last-event-pic2.jpeg" class="img-fluid shadow-sm rounded" alt="">
-                                </a>
-                                <h3 class="news-title mt-3">
-                                    افتتاح مسابقات فوتسال ادارات ساوه
-                                </h3>
-                                <div class="news-excerpt mt-2">
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                                </div>
-                                <a href="#" class="news-read d-flex align-content-center justify-content-end text-decoration-none gap-2 mt-2">
-                                    <span>مطالعه بیشتر</span>
-                                    <i class="bi bi-arrow-left"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-4">
-                            <div href="#" class="news-item shadow-lg text-decoration-none d-flex flex-column p-3">
-                                <a href="#" class="text-decoration-none position-relative">
-                                    <div class="d-flex justify-content-between position-absolute w-100 px-2 mt-2">
-                                        <div class="news-category rounded-5 d-flex align-content-center gap-2">
-                                            <i class="bi bi-bookmark-check"></i>
-                                            <span>ورزشی</span>
-                                        </div>
-
-                                        <div class="news-date d-flex align-content-center rounded-5 gap-2">
-                                            <span>10/07/1405</span>
-                                            <i class="bi bi-calendar2-check"></i>
-                                        </div>
-                                    </div>
-                                    <img src="resources/images/last-event-pic2.jpeg" class="img-fluid shadow-sm rounded" alt="">
-                                </a>
-                                <h3 class="news-title mt-3">
-                                    افتتاح مسابقات فوتسال ادارات ساوه
-                                </h3>
-                                <div class="news-excerpt mt-2">
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                                </div>
-                                <a href="#" class="news-read d-flex align-content-center justify-content-end text-decoration-none gap-2 mt-2">
-                                    <span>مطالعه بیشتر</span>
-                                    <i class="bi bi-arrow-left"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-4">
-                            <div href="#" class="news-item shadow-lg text-decoration-none d-flex flex-column p-3">
-                                <a href="#" class="text-decoration-none position-relative">
-                                    <div class="d-flex justify-content-between position-absolute w-100 px-2 mt-2">
-                                        <div class="news-category rounded-5 d-flex align-content-center gap-2">
-                                            <i class="bi bi-bookmark-check"></i>
-                                            <span>ورزشی</span>
-                                        </div>
-
-                                        <div class="news-date d-flex align-content-center rounded-5 gap-2">
-                                            <span>10/07/1405</span>
-                                            <i class="bi bi-calendar2-check"></i>
-                                        </div>
-                                    </div>
-                                    <img src="resources/images/last-event-pic2.jpeg" class="img-fluid shadow-sm rounded" alt="">
-                                </a>
-                                <h3 class="news-title mt-3">
-                                    افتتاح مسابقات فوتسال ادارات ساوه
-                                </h3>
-                                <div class="news-excerpt mt-2">
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                                </div>
-                                <a href="#" class="news-read d-flex align-content-center justify-content-end text-decoration-none gap-2 mt-2">
-                                    <span>مطالعه بیشتر</span>
-                                    <i class="bi bi-arrow-left"></i>
-                                </a>
-                            </div>
-                        </div>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -739,3 +600,7 @@
     <!-- city image -->
    </main>
 {% endblock body %}
+
+{% block scripts %}
+   <script src="{% static "js/countUp.umd.js" %}"></script>
+{% endblock scripts %}

@@ -492,6 +492,7 @@ nav.navbar {
 
 .news-item {
     height: max-content;
+    min-height: 390px;
     max-height: 390px;
     overflow: hidden;
     color: #1a1a1a;

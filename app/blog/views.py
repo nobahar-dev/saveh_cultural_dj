@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.core.paginator import Paginator
 from django.contrib import messages
+from django.db.models import F
 from .models import *
 from .forms import *
 
@@ -57,6 +58,15 @@ def article_detail(request, slug):
     last_news = Article.objects.filter(article_type=Article.ArticleType.NEWS, status=Article.Status.PUBLISHED).order_by('-created_at')[:4]
     last_events = Article.objects.filter(article_type=Article.ArticleType.EVENTS, status=Article.Status.PUBLISHED).order_by('-created_at')[:4]
     
+    # view count
+    session_key = f"viewed_article_{article.pk}"
+    if not request.session.get(session_key):
+        Article.objects.filter(pk=article.pk).update(view_count=F('view_count') + 1 )
+        request.session[session_key] = True
+        
+    article.refresh_from_db(fields=['view_count'])
+    
+    # comment form
     if request.method == 'POST':
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():

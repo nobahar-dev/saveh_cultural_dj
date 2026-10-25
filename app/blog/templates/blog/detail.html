@@ -1,9 +1,10 @@
 {% extends "base.html" %}
+{% load static %}
 {% load jalali_tags %}
 
 {% block css_styles %}
-    <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static "css/sweet-alert.css" %}">
+    <link rel="stylesheet" href="{% static "css/glightbox.min.css" %}">
 {% endblock css_styles %}
 
 {% block title %} سازمان فرهنگی هنری ورزشی شهرداری ساوه {% endblock title %}
@@ -218,8 +219,8 @@
 {% endblock body %}
 
 {% block scripts %}
-    <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="{% static "js/sweet-alert.min.js" %}"></script>
+    <script src="{% static "js/glightbox.min.js" %}"></script>
     {% if messages %}
         {% for message in messages %}
             {% if message.tags == 'success' %}
