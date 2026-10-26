@@ -64,7 +64,7 @@
                     </div>
                     <div class="article-gallery mt-4">
                         {% for gallery in article_gallery %}
-                            <a href="{{ gallery.image.url }}" class="gallery-item">
+                            <a href="{{ gallery.image.url }}" class="gallery-item" >
                                 <img src="{{ gallery.image.url }}" alt="{{ gallery.alt_text }}">
                             </a>
                         {% endfor %}
