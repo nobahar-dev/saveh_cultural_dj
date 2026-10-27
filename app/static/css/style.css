@@ -534,6 +534,7 @@ nav.navbar {
     padding: 4px 15px;
     font-family: 'sansdn_bold';
     color: white;
+    font-size: 12px;
 }
 
 .news-date {
@@ -541,6 +542,7 @@ nav.navbar {
     padding: 4px 15px;
     font-family: 'sansdn_bold';
     color: white;
+    font-size: 12px;
 }
 /* last news */
 
@@ -1355,3 +1357,36 @@ nav.navbar {
     font-size: 16px;
 }
 /* contact page */
+/* 404 page */
+.main-404 {
+    margin: 80px 0;
+}
+
+.title-404 {
+    font-family: 'sansdn_bold';
+    font-size: 40px;
+    color: #087f75;
+}
+
+.subtitle-404 {
+    font-family: 'sansdn_regular';
+    font-size: 20px;
+    color: #087f75;
+}
+
+.btn-404-home {
+    background-color: #075b57;
+    border-radius: 18px;
+    color: white;
+    padding: 13px 25px;
+    font-family: 'sansdn_bold';
+    font-size: 16px;
+    border: 1px solid #075b57;
+    transition: all .3s ease-in-out;
+}
+
+.btn-404-home:hover {
+    background-color: white;
+    color: #075b57;
+}
+/* end of 404 page */
