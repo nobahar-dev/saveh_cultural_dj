@@ -158,30 +158,27 @@
                 <span>سخن مدیرعامل</span>
             </div>
             <div class="section-subtitle">
-                فرهنگ و نشاط اجتماعی، از مهم‌ترین ارکان توسعه و پیشرفت هر شهر است.
+                {{ ceo_speech.slogan }}
             </div>
         </a>
         <div class="row mt-5">
             <div class="col-md-6">
                 <div class="ceo-img-wrapper rounded-5 shadow-sm">
-                    <img class="img-fluid shadow-lg" src="{% static "images/ceo-img.jpeg" %}" alt="سازمان فرنگی هنری اجتماعی ورزشی شهرداری ساوه">
+                    {% if ceo_speech.image.url %}
+                        <img class="img-fluid shadow-lg" src="{{ ceo_speech.image.url }}" alt="{{ ceo_speech.title }}">
+                    {% endif %}
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="ceo-message">
                     <div class="ceo-message-title mt-3">
-                        با هم، برای آینده بهتر
+                        {{ ceo_speech.title }}
                     </div>
                     <div class="ceo-message-content mt-3">
-                        سازمان فرهنگی، اجتماعی و ورزشی شهرداری ساوه با هدف ارتقای کیفیت زندگی شهروندان فعالیت می‌کند.
-                        تلاش ما بر گسترش برنامه‌های فرهنگی، اجتماعی و ورزشی و ایجاد فرصت‌های برابر برای همه شهروندان است.
-                        حمایت از جوانان، توسعه ورزش همگانی و تقویت مشارکت اجتماعی، از اولویت‌های این مجموعه به شمار می‌رود.
-                        همچنین پاسداشت هویت، فرهنگ و ظرفیت‌های ارزشمند شهر ساوه را وظیفه‌ای مهم می‌دانیم.
-                        امیدواریم با همراهی شهروندان و همکاری مجموعه مدیریت شهری، شهری پویا، بانشاط و امیدآفرین داشته باشیم.
-                        در این مسیر، خدمت به شهروندان و حرکت در جهت توسعه همه‌جانبه ساوه، مهم‌ترین هدف ماست.
+                        {{ ceo_speech.message }}
                     </div>
                     <div class="ceo-sign d-flex flex-column align-items-end w-100">
-                        <div class="ceo-name text-center">رضا یزدی</div>
+                        <div class="ceo-name text-center">{{ ceo_speech.ceo_name }}</div>
                     </div>
                 </div>
             </div>
@@ -191,3 +188,36 @@
    </main>
 
 {% endblock body %}
+
+{% block scripts %}
+   <script src="{% static "js/countUp.umd.js" %}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const stats = [
+        ['stat1', 25],
+        ['stat2', 120],
+        ['stat3', 15000],
+        ['stat4', 25000]
+    ];
+
+    const options = {
+        duration: 2.5,
+        useGrouping: true,
+        autoAnimate: true,
+        autoAnimateOnce: true
+    };
+
+    stats.forEach(([id, target]) => {
+
+        const counter = new countUp.CountUp(id, target, options);
+
+        if (counter.error) {
+            console.error(counter.error);
+        }
+
+    });
+
+});
+</script>
+{% endblock scripts %}

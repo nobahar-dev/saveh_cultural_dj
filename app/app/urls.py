@@ -8,6 +8,7 @@ urlpatterns = [
     path('', include('home.urls', namespace='home')),
     path('blog/', include('blog.urls', namespace='blog')),
     path("ckeditor5/", include("django_ckeditor_5.urls")),
+    path('captcha/', include('captcha.urls')),
 ]
 
 

@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.core.paginator import Paginator
 from django.contrib import messages
-from django.db.models import F
+from django.db.models import F, Q
 from .models import *
 from .forms import *
 
@@ -124,3 +124,38 @@ def article_detail(request, slug):
         'comment_form': comment_form
     }
     return render(request, 'blog/detail.html', context)
+
+
+def search_article(request):
+    query = request.GET.get('q', '').strip()
+    articles = Article.objects.none()
+    
+    if query:
+        articles = Article.objects.filter(status=Article.Status.PUBLISHED).filter(
+            Q(title__icontains=query) |
+            Q(summary__icontains=query) |
+            Q(content__icontains=query)
+        ).distinct().order_by('-created_at')
+        
+    paginator = Paginator(articles, 9)
+    article_page_obj = paginator.get_page(request.GET.get('page'))
+    
+    breadcrumbs = [
+        {
+            'title': 'صفحه اصلی',
+            'url': reverse("home:home")
+        },
+        {
+            'title': 'جستجو مقاله',
+            'url': ''
+        },
+    ]
+        
+    context = {
+        'query': query,
+        'article_page_obj': article_page_obj,
+        'breadcrumbs': breadcrumbs,
+        'selected_type': 'all'
+    }
+    
+    return render(request, 'blog/blog.html', context)

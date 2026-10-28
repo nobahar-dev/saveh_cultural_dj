@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block css_styles %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/sweet-alert.css" %}">
+{% endblock css_styles %}
+
 {% block title %} سازمان فرهنگی هنری ورزشی شهرداری ساوه {% endblock title %}
 
 {% block body %}
@@ -22,27 +26,48 @@
                                 <span class="mt-1">ما در اسرع وقت با شما تماس خواهیم گرفت</span>
                             </div>
                         </div>
-                        <form action="#" class="contact-form mt-3">
+                        <form method="post" class="contact-form mt-3">
+                            {% csrf_token %}
+                            {{ contact_form.full_name.errors }}
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="name_family">
                                     <i class="bi bi-person-fill"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="نام و نام خانوادگی" id="in_name_family" name="name_family">
+                                <input type="text" class="form-control" placeholder="نام و نام خانوادگی" id="full_name" name="full_name" required>
                             </div>
+
+                            {{ contact_form.phone.errors }}
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="phone">
                                     <i class="bi bi-telephone-inbound"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="شماره تماس" id="in_phone" name="phone">
+                                <input type="text" class="form-control" placeholder="شماره تماس" id="phone" name="phone" required>
                             </div>
 
+                            {{ contact_form.message.errors }}
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="message">
                                     <i class="bi bi-chat-left-text"></i>
                                 </span>
-                                <textarea class="form-control" rows="7" placeholder="متن پیام" name="message" id="in_message"></textarea>
+                                <textarea class="form-control" rows="7" placeholder="متن پیام" name="message" id="message" required></textarea>
                             </div>
-                            <button type="submit" class="d-flex align-items-center justify-content-center align-content-center gap-2 btn btn bg-success text-white px-4">
+
+                            <div class="mb-3">
+                                <div class="d-flex align-items-center gap-2 flex-wrap">
+                                    {{ contact_form.captcha }}
+
+                                    <button type="button" id="refresh-captcha" class="btn btn-outline-success" title="تغییر کد امنیتی" aria-label="تغییر کد امنیتی" >
+                                        <i class="bi bi-arrow-clockwise"></i>
+                                    </button>
+                                </div>
+
+                                {% if contact_form.captcha.errors %}
+                                    <div class="text-danger small mt-2">
+                                        {{ contact_form.captcha.errors }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <button type="submit" class="d-flex mt-3 align-items-center justify-content-center align-content-center gap-2 btn btn bg-success text-white px-4">
                                 <span>ارسال پیام</span>
                                 <i class="bi bi-send-check"></i>
                             </button>
@@ -114,3 +139,79 @@
     </main>
 
 {% endblock body %}
+
+{% block scripts %}
+    <script src="{% static "js/sweet-alert.min.js" %}"></script>
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+                <script>
+                    swal({
+                        title: "موفقیت‌آمیز!",
+                        text: "{{ message|escapejs }}",
+                        type: "success",
+                        confirmButtonText: "متوجه شدم"
+                    });
+                </script>
+            {% elif  message.tags == 'error'%}        
+                <script>
+                    swal({
+                        title: "خطا!!",
+                        text: "{{ message|escapejs }}",
+                        type: "error",
+                        confirmButtonText: "متوجه شدم"
+                    });
+                </script>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const refreshButton = document.getElementById('refresh-captcha');
+
+        if (!refreshButton) return;
+
+        refreshButton.addEventListener('click', function () {
+            const captchaImage = document.querySelector(
+                'img.captcha'
+            );
+
+            const captchaHiddenInput = document.querySelector(
+                'input[name="captcha_0"]'
+            );
+
+            const captchaTextInput = document.querySelector(
+                'input[name="captcha_1"]'
+            );
+
+            if (!captchaImage || !captchaHiddenInput || !captchaTextInput) {
+                return;
+            }
+
+            fetch('/captcha/refresh/', {
+                method: 'GET',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('خطا در دریافت کپچای جدید');
+                }
+
+                return response.json();
+            })
+            .then(data => {
+                captchaImage.src = data.image_url;
+                captchaHiddenInput.value = data.key;
+                captchaTextInput.value = '';
+                captchaTextInput.focus();
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        });
+    });
+    </script>
+{% endblock scripts %}

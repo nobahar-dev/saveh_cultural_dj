@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # external apps
     'jalali_date',
     'django_ckeditor_5',
+    'captcha',
 ]
 
 MIDDLEWARE = [

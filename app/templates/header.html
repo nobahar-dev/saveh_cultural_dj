@@ -50,9 +50,9 @@
                             <a href="{% url 'home:contact' %}" class="nav-link {% if request.resolver_match.url_name == 'contact' %} active {% endif %}">ارتباط با ما</a>
                         </li>
                     </ul>
-                    <form action="#" class="d-flex" role="search">
+                    <form action="{% url 'blog:search' %}" class="d-flex" role="search">
                         <div class="input-g position-relative">
-                            <input type="search" class="search-input shadow-sm" placeholder="جستجو...">
+                            <input type="search" name="q" value="{{ request.GET.q|default:'' }}" class="search-input shadow-sm" placeholder="جستجو...">
                             <i class="bi bi-search position-absolute"></i>
                         </div>
                     </form>

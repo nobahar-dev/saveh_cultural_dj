@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
+from django.contrib import messages
+from .forms import *
 from .models import *
 from blog.models import Article
 
@@ -25,6 +27,8 @@ def home(request):
 
 
 def about(request):
+    ceo_speech = ManagerSpeech.objects.first()
+    
     breadcrumbs = [
         {
             'title': 'صفحه اصلی',
@@ -37,12 +41,25 @@ def about(request):
     ]
     
     context = {
-        'breadcrumbs': breadcrumbs
+        'breadcrumbs': breadcrumbs,
+        'ceo_speech': ceo_speech
     }
     return render(request, 'home/about.html', context)
 
 
 def contact(request):
+    if request.method == 'POST':
+        contact_form = ContactForm(request.POST)
+        if contact_form.is_valid():
+            contact_form.save()
+            messages.success(request, 'پیام شما ارسال شد')
+            return redirect('home:contact')
+        else:
+            print(contact_form.errors)
+            messages.error(request, "ارسال اطلاعات به درستی انجام نشده است")
+    else:
+        contact_form = ContactForm()
+    
     breadcrumbs = [
             {
                 'title': 'صفحه اصلی',
@@ -56,6 +73,7 @@ def contact(request):
     
     context = {
         'breadcrumbs': breadcrumbs,
+        'contact_form': contact_form
     }
     
     return render(request, 'home/contact.html', context)
