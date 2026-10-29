@@ -169,31 +169,56 @@ nav.navbar {
     width: 100%;
     height: 700px;
     overflow: hidden;
+    position: relative;
+}
+
+.swiper-slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.4) 40%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
 }
 
 .swiper-slide img {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
     object-position: center;
 }
 
 .slider-text {
     position: absolute;
+    inset: 0;
+    z-index: 2;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    background: none;
 }
 
 .slider-title {
     font-family: "sansdn_bold";
     font-size: 36px;
+    color: #FFFDF5;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
+    font-weight: 800;
 }
 
 .slider-subtitle {
     font-family: 'sansdn_regular';
     font-size: 28px;
+    color: #F1F5F3;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+    font-weight: 500;
 }
 /* home page */
 

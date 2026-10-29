@@ -14,8 +14,8 @@
                     {% for image in sliders %}
                         <div class="swiper-slide position-relative">
                             <div class="slider-text d-flex flex-column align-items-center justify-content-center">
-                                <div class="slider-title shadow-sm">{{ image.title }}</div>
-                                <div class="slider-subtitle shadow-sm mt-2 text-center">{{ image.subtitle }}</div>
+                                <div class="slider-title">{{ image.title }}</div>
+                                <div class="slider-subtitle mt-2 text-center">{{ image.subtitle }}</div>
                             </div>
                             <img class="img-fluid" src="{{ image.image.url }}" alt="{{ image.title }}">
                         </div>
