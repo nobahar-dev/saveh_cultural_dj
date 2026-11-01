@@ -199,6 +199,27 @@ CKEDITOR_5_CONFIGS = {
             ],
             "shouldNotGroupWhenFull": True,
         },
+        
+        'htmlSupport': {
+            'allow': [
+                {
+                    'name': 'iframe',
+                    'attributes': True,
+                    'classes': True,
+                    'styles': True,
+                },
+                {
+                    'name': 'div',
+                    'attributes': True,
+                    'classes': True,
+                    'styles': True,
+                },
+            ],
+        },
+
+        'mediaEmbed': {
+            'previewsInData': True,
+        },
 
         "heading": {
             "options": [
