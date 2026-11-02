@@ -44,37 +44,37 @@
                         </div>
                         <ul class="quick-wrapper list-unstyled mt-4 d-flex flex-column justify-content-center gap-3">
                             <li class="quick-item">
-                                <a href="#" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
+                                <a href="{% url 'home:home' %}" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
                                     <i class="bi bi-chevron-left"></i>
                                     <span>صفحه اصلی</span>
                                 </a>
                             </li>
                             <li class="quick-item">
-                                <a href="#" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
+                                <a href="{% url 'blog:blog' %}?type=news" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
                                     <i class="bi bi-chevron-left"></i>
                                     <span>اخبار و اطلاعیه ها</span>
                                 </a>
                             </li>
                             <li class="quick-item">
-                                <a href="#" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
+                                <a href="{% url 'blog:blog' %}?type=events" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
                                     <i class="bi bi-chevron-left"></i>
                                     <span>رویدادها و آئین ها</span>
                                 </a>
                             </li>
                             <li class="quick-item">
-                                <a href="#" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
+                                <a href="{% url 'blog:blog' %}?type=galleries" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
                                     <i class="bi bi-chevron-left"></i>
                                     <span>گالری تصاویر</span>
                                 </a>
                             </li>
                             <li class="quick-item">
-                                <a href="#" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
+                                <a href="{% url 'home:about' %}" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
                                     <i class="bi bi-chevron-left"></i>
                                     <span>درباره ما</span>
                                 </a>
                             </li>
                             <li class="quick-item">
-                                <a href="#" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
+                                <a href="{% url 'home:contact' %}" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
                                     <i class="bi bi-chevron-left"></i>
                                     <span>تماس با ما</span>
                                 </a>
@@ -127,36 +127,16 @@
                             آخرین اخبار
                         </div>
                         <ul class="quick-wrapper list-unstyled mt-4 d-flex flex-column justify-content-center gap-3">
-                            <li class="quick-item">
-                                <a href="#" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
-                                    <span>برگزاری جشنواره در ساوه</span>
-                                    <i class="bi bi-chevron-left"></i>
-                                </a>
-                            </li>
-                            <li class="quick-item">
-                                <a href="#" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
-                                    <span>عملیات مرمت فضای سبز</span>
-                                    <i class="bi bi-chevron-left"></i>
-                                </a>
-                            </li>
-                            <li class="quick-item">
-                                <a href="#" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
-                                    <span>افتتاح مجموعه ورزشی</span>
-                                    <i class="bi bi-chevron-left"></i>
-                                </a>
-                            </li>
-                            <li class="quick-item">
-                                <a href="#" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
-                                    <span>برگزاری رویدادهای هفته جوان</span>
-                                    <i class="bi bi-chevron-left"></i>
-                                </a>
-                            </li>
-                            <li class="quick-item">
-                                <a href="#" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
-                                    <span>تقدیر از ورزشکاران برتر</span>
-                                    <i class="bi bi-chevron-left"></i>
-                                </a>
-                            </li>
+                            {% if footer_latest_news %}
+                                {% for news in footer_latest_news %}
+                                    <li class="quick-item">
+                                        <a href="{% url 'blog:article_detail' slug=news.slug %}" class="quick-link text-decoration-none d-flex align-content-center align-items-center gap-3">
+                                            <span>{{ news.title }}</span>
+                                            <i class="bi bi-chevron-left"></i>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            {% endif %}
                         </ul>
                     </div>
                 </div>

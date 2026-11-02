@@ -207,7 +207,7 @@
 
                                 <div class="last-event-back">
                                     <h5>{{ event.title }}</h5>
-                                    <div class="mt-4">{{ event.summary|truncatechars:100 }}</div>
+                                    <div class="mt-4">{{ event.summary|truncatechars:100|safe }}</div>
                                     <a href="{% url 'blog:article_detail' slug=event.slug %}" class="btn btn-outline-warning mt-4">مشاهده بیشتر</a>
                                 </div>
                             </div>
@@ -256,7 +256,7 @@
                                         <div class="m-news-extra d-flex justify-content-end mt-2">
                                             <p>{{ news.created_at|to_jalali:'%Y/%m/%d' }}</p>
                                             <div class="ms-4">
-                                                <span>{{ news.view_count }}</span>
+                                                <span>{{ news.view_count|truncatechars:100|safe }}</span>
                                                 <i class="bi bi-eye"></i>
                                             </div>
                                         </div>
@@ -294,7 +294,7 @@
                                             {{ news.title }}
                                         </h3>
                                         <div class="news-excerpt mt-2">
-                                            {{ news.summary|truncatechars:150 }}
+                                            {{ news.summary|truncatechars:100|safe }}
                                         </div>
                                         <a href="{% url 'blog:article_detail' slug=news.slug %}" class="news-read d-flex align-content-center justify-content-end text-decoration-none gap-2 mt-2">
                                             <span>مطالعه بیشتر</span>

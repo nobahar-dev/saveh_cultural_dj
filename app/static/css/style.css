@@ -557,7 +557,7 @@ nav.navbar {
 }
 
 .news-excerpt {
-    max-height: max-content;
+    max-height: 60px;
     font-family: 'sansdn_regular';
     font-size: 15px;
     text-align: justify;
