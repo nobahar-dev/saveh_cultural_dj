@@ -255,6 +255,16 @@
     {% endif %}
 
     <script>
+        // slider in detail page
+        GLightbox({
+            selector: '.gallery-item',
+            loop: true,
+            zoomable: true,
+            touchNavigation: true
+        });
+    </script>
+
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
         const refreshButton = document.getElementById('refresh-captcha');
 

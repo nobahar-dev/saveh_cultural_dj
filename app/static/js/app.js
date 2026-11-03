@@ -54,11 +54,3 @@ new Swiper('.gallery-swiper', {
         clickable: true,
     },
 });
-
-// slider in detail page
-GLightbox({
-    selector: '.gallery-item',
-    loop: true,
-    zoomable: true,
-    touchNavigation: true
-});
