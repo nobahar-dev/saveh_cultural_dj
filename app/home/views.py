@@ -13,7 +13,7 @@ def home(request):
     last_events = Article.objects.filter(article_type=Article.ArticleType.EVENTS, status=Article.Status.PUBLISHED).order_by('-created_at')[:6]
     last_news = Article.objects.filter(article_type=Article.ArticleType.NEWS, status=Article.Status.PUBLISHED).order_by('-created_at')[:6]
     most_news = Article.objects.filter(article_type=Article.ArticleType.NEWS, status=Article.Status.PUBLISHED).order_by('-view_count')[:4]
-    galleries = Article.objects.filter(article_type=Article.ArticleType.GALLERIES, status=Article.Status.PUBLISHED).order_by('-created_at')[:6]
+    tourism = Article.objects.filter(article_type=Article.ArticleType.TOURISM, status=Article.Status.PUBLISHED).order_by('-created_at')[:10]
     
     context = {
         'sliders': sliders,
@@ -21,7 +21,7 @@ def home(request):
         'last_events': last_events,
         'last_news': last_news,
         'most_news': most_news,
-        'galleries': galleries
+        'tourism': tourism
     }
     return render(request, 'home/home.html', context)
 
@@ -77,3 +77,11 @@ def contact(request):
     }
     
     return render(request, 'home/contact.html', context)
+
+
+def urban(request):
+    tourism = Article.objects.filter(article_type=Article.ArticleType.TOURISM, status=Article.Status.PUBLISHED).order_by('-created_at')[:10]
+    context = {
+        'tourism': tourism
+    }
+    return render(request, 'home/urban.html', context)

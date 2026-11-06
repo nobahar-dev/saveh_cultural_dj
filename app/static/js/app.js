@@ -38,15 +38,15 @@ new Swiper('.last-events-swiper', {
     },
 });
 
-new Swiper('.gallery-swiper', {
+new Swiper('.tourism-swiper', {
     slidesPerView: 3,
     grid: {
         rows: 2,
         fill:'row'
     },
     navigation: {
-        nextEl: '.gallery-next',
-        prevEl: '.gallery-prev',
+        nextEl: '.urban-next',
+        prevEl: '.urban-prev',
     },
     spaceBetween: 30,
     pagination: {

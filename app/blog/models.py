@@ -12,7 +12,7 @@ class Article(models.Model):
     class ArticleType(models.TextChoices):
         NEWS = "news", "آخرین اخبار"
         EVENTS = "events", "آخرین رویدادها"
-        GALLERIES = "galleries", "گالری تصاویر"
+        TOURISM = "tourism", "گردشگری"
     
     title = models.CharField(max_length=250, verbose_name='عنوان مقاله')
     slug = models.SlugField(max_length=280, unique=True, blank=True, allow_unicode=True, verbose_name='شناسه آدرس')

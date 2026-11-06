@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+{% load static %}
+{% load jalali_tags %}
+
+{% block title %} سازمان فرهنگی هنری ورزشی شهرداری ساوه {% endblock title %}
+
+{% block body %}
+
+   {% include "home/about_hero.html" %}
+
+   <main class="main my-5">
+    <!-- urban services -->
+    <section class="urban-services container">
+        <a class="section-title-wrapper text-decoration-none d-flex flex-column align-items-center justify-content-center gap-2">
+            <img src="resources/images/urban_services_icon.png" alt="">
+            <div class="section-title d-flex align-items-center justify-content-center gap-4">
+                <span>خدمات شهری</span>
+            </div>
+        </a>
+        <div class="row mt-3 g-4">
+            <div class="col-lg-3 col-md-6">
+                <a href="#" class="urban-service-item text-decoration-none shadow-lg d-flex flex-column align-items-center justify-content-center">
+                    <div class="urban-img-wrapper">
+                        <img class="img-fluid" src="{% static 'images/health_care.png' %}" alt="خدمات بهداشت و درمان">
+                    </div>
+                    <h3 class="urban-item-title text-center">
+                        خدمات بهداشت و درمان
+                    </h3>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <a href="#" class="urban-service-item text-decoration-none shadow-lg d-flex flex-column align-items-center justify-content-center">
+                    <div class="urban-img-wrapper">
+                        <img class="img-fluid" src="{% static 'images/bank_service.png' %}" alt="خدمات بانک و بیمه">
+                    </div>
+                    <h3 class="urban-item-title text-center">
+                        خدمات بانک و بیمه
+                    </h3>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <a href="#" class="urban-service-item text-decoration-none shadow-lg d-flex flex-column align-items-center justify-content-center">
+                    <div class="urban-img-wrapper">
+                        <img class="img-fluid" src="{% static 'images/gas_stations.png' %}" alt="جایگاه های سوخت">
+                    </div>
+                    <h3 class="urban-item-title text-center">
+                        جایگاه های سوخت
+                    </h3>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <a href="#" class="urban-service-item text-decoration-none shadow-lg d-flex flex-column align-items-center justify-content-center">
+                    <div class="urban-img-wrapper">
+                        <img class="img-fluid" src="{% static 'images/repair_shop.png' %}" alt="تعمیرگاه های مجاز">
+                    </div>
+                    <h3 class="urban-item-title text-center">
+                        تعمیرگاه های مجاز
+                    </h3>
+                </a>
+            </div>
+        </div>
+
+        <div class="row mt-3 g-4">
+            <div class="col-lg-3 col-md-6">
+                <a href="#" class="urban-service-item text-decoration-none shadow-lg d-flex flex-column align-items-center justify-content-center">
+                    <div class="urban-img-wrapper">
+                        <img class="img-fluid" src="{% static 'images/phone_services.png' %}" alt="خدمات تلفن همراه">
+                    </div>
+                    <h3 class="urban-item-title text-center">
+                        خدمات تلفن همراه
+                    </h3>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <a href="#" class="urban-service-item text-decoration-none shadow-lg d-flex flex-column align-items-center justify-content-center">
+                    <div class="urban-img-wrapper">
+                        <img class="img-fluid" src="{% static 'images/police_services.png' %}" alt="خدمات انتظامی و پلیس">
+                    </div>
+                    <h3 class="urban-item-title text-center">
+                        خدمات انتظامی و پلیس
+                    </h3>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <a href="#" class="urban-service-item text-decoration-none shadow-lg d-flex flex-column align-items-center justify-content-center">
+                    <div class="urban-img-wrapper">
+                        <img class="img-fluid" src="{% static 'images/hotel_services.png' %}" alt="اماکن اقامتی و اسکان">
+                    </div>
+                    <h3 class="urban-item-title text-center">
+                        اماکن اقامتی و اسکان
+                    </h3>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <a href="#" class="urban-service-item text-decoration-none shadow-lg d-flex flex-column align-items-center justify-content-center">
+                    <div class="urban-img-wrapper">
+                        <img class="img-fluid" src="{% static 'images/transportations_service.png' %}" alt="اطلاعات حمل و نقل">
+                    </div>
+                    <h3 class="urban-item-title text-center">
+                        اطلاعات حمل و نقل
+                    </h3>
+                </a>
+            </div>
+        </div>
+
+        <div class="row mt-3 g-4">
+            <div class="col-lg-3 col-md-6">
+                <a href="#" class="urban-service-item text-decoration-none shadow-lg d-flex flex-column align-items-center justify-content-center">
+                    <div class="urban-img-wrapper">
+                        <img class="img-fluid" src="{% static 'images/entertaiment_service.png' %}" alt="مراکز تفریحی و فروشگاه ها">
+                    </div>
+                    <h3 class="urban-item-title text-center">
+                        مراکز تفریحی و فروشگاه ها
+                    </h3>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <a href="#" class="urban-service-item text-decoration-none shadow-lg d-flex flex-column align-items-center justify-content-center">
+                    <div class="urban-img-wrapper">
+                        <img class="img-fluid" src="{% static 'images/tourism.png' %}" alt="اماکن دیدنی و گردشگری">
+                    </div>
+                    <h3 class="urban-item-title text-center">
+                        اماکن دیدنی و گردشگری
+                    </h3>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <a href="#" class="urban-service-item text-decoration-none shadow-lg d-flex flex-column align-items-center justify-content-center">
+                    <div class="urban-img-wrapper">
+                        <img class="img-fluid" src="{% static 'images/emergency_phones.png' %}" alt="تلفن های ضروری">
+                    </div>
+                    <h3 class="urban-item-title text-center">
+                        تلفن های ضروری
+                    </h3>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <a href="#" class="urban-service-item text-decoration-none shadow-lg d-flex flex-column align-items-center justify-content-center">
+                    <div class="urban-img-wrapper">
+                        <img class="img-fluid" src="{% static 'images/restaurant_services.png' %}" alt="رستوران ها و اغذیه فروشی">
+                    </div>
+                    <h3 class="urban-item-title text-center">
+                        رستوران ها و اغذیه فروشی
+                    </h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- tourism -->
+    <section class="tourism mt-5">
+        <a href="blog_detail.html" class="section-title-wrapper text-decoration-none d-flex flex-column align-items-center justify-content-center gap-2">
+            <img src="resources/images/toursim_section.png" alt="">
+            <div class="section-title d-flex align-items-center justify-content-center gap-4">
+                <span>اماکن دیدنی و گردشگری</span>
+            </div>
+            <div class="section-subtitle">
+                جاذبه‌های تاریخی، فرهنگی و طبیعی ساوه را کشف کنید و از زیبایی‌های شهر لذت ببرید.
+            </div>
+        </a>
+
+        <div class="container-fluid mt-5">
+            <div class="swiper tourism-swiper">
+                {% if tourism %}
+                <div class="swiper-wrapper">
+                    {% for tour in tourism %}
+                        <div class="swiper-slide">
+                            <div class="tourism-item d-flex flex-column justify-content-center position-relative">
+                                <a href="{% url 'blog:article_detail' slug=tour.slug %}" class="text-decoration-none">
+                                    <div class="g-category d-flex align-content-center align-items-center gap-2">
+                                        <i class="bi bi-camera"></i>
+                                        <span>{{ tour.categories.first.title }}</span>
+                                    </div>
+                                    {% if tour.featured_image %}
+                                        <img src="{{ tour.featured_image.url }}" alt="{{ tour.title }}">
+                                    {% endif %}
+                                </a>
+                                <div class="tourism-content-wrapper d-flex flex-column justify-content-center">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="g-title">{{ tour.title }}</div>
+                                        <div class="g-date mt-2 d-flex align-items-center align-content-center gap-2">
+                                            <i class="bi bi-calendar-week"></i>
+                                            <span>{{ tour.created_at|to_jalali:'%Y/%m/%d' }}</span>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'blog:article_detail' slug=tour.slug %}" class="g-read align-self-end text-decoration-none d-flex justify-content-center align-content-center gap-2 py-2">
+                                        <span>مشاهده تصاویر</span>
+                                        <i class="bi bi-arrow-left"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <div class="swiper-button-next urban-next"></div>
+                <div class="swiper-button-prev urban-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <!-- tourism -->
+
+    <section class="city-image">
+        <img class="img-fluid" src="{% static "images/saveh-city-image.jpeg" %}" alt="سازمان فرهنگی هنری اجتماعی ورزشی شهرداری ساوه">
+    </section>
+    <!-- city image -->
+   </main>
+
+{% endblock body %}

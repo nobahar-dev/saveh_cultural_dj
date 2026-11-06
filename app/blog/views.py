@@ -12,7 +12,7 @@ def blog(request):
     
     articles = Article.objects.filter(status=Article.Status.PUBLISHED)
     
-    if selected_type in [Article.ArticleType.NEWS, Article.ArticleType.GALLERIES, Article.ArticleType.EVENTS]:
+    if selected_type in [Article.ArticleType.NEWS, Article.ArticleType.TOURISM, Article.ArticleType.EVENTS]:
         articles = articles.filter(article_type=selected_type)
     else:
         selected_type = 'all'
@@ -28,7 +28,7 @@ def blog(request):
         'all': 'اخبار و رویدادها',
         'news': 'آخرین اخبار',
         'events': 'آخرین رویدادها',
-        'galleries': 'گزارشات تصویری'
+        'tourism': 'اماکن دیدنی و گردشگری'
     }
     
     context = {
@@ -88,9 +88,9 @@ def article_detail(request, slug):
             'title': 'آخرین رویدادها',
             'type': 'events'
         },
-        Article.ArticleType.GALLERIES: {
-            'title': 'گزارشات تصویری',
-            'type': 'galleries'
+        Article.ArticleType.TOURISM: {
+            'title': 'اماکن دیدنی و گردشگری',
+            'type': 'tourism'
         }
     }
     
