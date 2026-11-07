@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block css_styles %}
+
+{% endblock css_styles %}
+
 {% block title %} سازمان فرهنگی هنری ورزشی شهرداری ساوه {% endblock title %}
 
 {% block body %}
@@ -175,7 +179,7 @@
                         {{ ceo_speech.title }}
                     </div>
                     <div class="ceo-message-content mt-3">
-                        {{ ceo_speech.message }}
+                        {{ ceo_speech.message|safe }}
                     </div>
                     <div class="ceo-sign d-flex flex-column align-items-end w-100">
                         <div class="ceo-name text-center">{{ ceo_speech.ceo_name }}</div>
@@ -185,12 +189,19 @@
         </div>
      </section>
     <!-- CEO word -->
+
    </main>
 
 {% endblock body %}
 
 {% block scripts %}
    <script src="{% static "js/countUp.umd.js" %}"></script>
+
+   	<script type="module">
+		import {LeafletMap, TileLayer} from 'leaflet';
+		// the map code goes here
+	</script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
