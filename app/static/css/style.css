@@ -1,17 +1,17 @@
 /* common styles */
 @font-face {
     font-family: "sansdn_regular";
-    src: url("../fonts/sansdn_regular.ttf");
+    src: url("../fonts/sans_regular.woff2") format('woff2');
 }
 
 @font-face {
     font-family: "sansdn_light";
-    src: url("../fonts/sansdn_light.ttf");
+    src: url("../fonts/sans_light.woff2") format('woff2');
 }
 
 @font-face {
     font-family: "sansdn_bold";
-    src: url("../fonts/sansdn_bold.ttf");
+    src: url("../fonts/sans_bold.woff2") format('woff2');
 }
 
 html {
