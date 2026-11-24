@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+    'django.contrib.sites',
     'django.contrib.sitemaps',
     # project apps
     'home.apps.HomeConfig',
@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'django_ckeditor_5',
     'captcha',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
