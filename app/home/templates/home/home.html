@@ -4,6 +4,8 @@
 
 {% block title %} سازمان فرهنگی هنری ورزشی شهرداری ساوه {% endblock title %}
 
+{% block meta_desc %} وب سایت رسمی سازمان فرهنگی هنری ورزشی شهرداری ساوه. مرجع اخبار و رویدادهای فرهنگی. معرفی مکانهای گردشگری شهرستان ساوه {% endblock meta_desc %}
+
 {% block body %}
    <main class="main">
     <!-- slider -->
@@ -37,9 +39,9 @@
                         <div class="cultural-info-title text-center">
                             معرفی سازمان
                         </div>
-                        <div class="cultural-info-subtitle mt-lg-5 mt-4">
+                        <h1 class="cultural-info-subtitle mt-lg-5 mt-4">
                             سازمان فرهنگی، اجتماعی و ورزشی شهرداری ساوه
-                        </div>
+                        </h1>
                         <div class="cultural-info-separator mt-3"></div>
                         <div class="cultural-info-content mt-4">
                             سازمان با موضوع انجام امور فرهنگی و ورزشی و در چارچوب فعالیت و مأموریت های قانون شهرداری در زمینه مدیریت و اداره امور فرهنگی، تفریحی، ورزشی در قالب وظایف قانونی شهرداری قم فعالیت می نماید و طبق مقررات و اساسنامه این سازمان اداره می شود.
@@ -133,9 +135,9 @@
         <section class="one-eye mt-5">
             <a class="section-title-wrapper text-decoration-none d-flex flex-column align-items-center justify-content-center gap-2">
                 <img src="{% static "images/one_eye.png" %}" alt="سازمان فرهنگی هنری اجتماعی ورزشی شهرداری ساوه">
-                <div class="section-title d-flex align-items-center justify-content-center gap-4">
+                <h2 class="section-title d-flex align-items-center justify-content-center gap-4">
                     <span>در یک نگاه</span>
-                </div>
+                </h2>
             </a>
 
             <div class="statistics-wrapper shadow-lg p-3 d-flex align-items-center justify-content-around flex-wrap mt-4 gap-2">
@@ -190,7 +192,7 @@
     <section class="last-events mt-5">
         <div class="last-events-title-wrapper d-flex align-items-center">
             <i class="bi bi-dot"></i>
-            <div class="last-e-title">آخرین آئین ها و رویدادها</div>
+            <h2 class="last-e-title">آخرین آئین ها و رویدادها</h2>
         </div>
 
         <div class="swiper last-events-swiper pb-5 ">
@@ -206,7 +208,7 @@
                                 </div>
 
                                 <div class="last-event-back">
-                                    <h5>{{ event.title }}</h5>
+                                    <h3>{{ event.title }}</h3>
                                     <div class="mt-4">{{ event.summary|truncatechars:100|safe }}</div>
                                     <a href="{% url 'blog:article_detail' slug=event.slug %}" class="btn btn-outline-warning mt-4">مشاهده بیشتر</a>
                                 </div>
@@ -224,9 +226,9 @@
     <section class="last-news">
         <a href="#" class="section-title-wrapper text-decoration-none d-flex flex-column align-items-center justify-content-center gap-2">
             <img src="{% static "images/last-news-icon.png" %}" alt="سازمان فرهنگی هنری اجتماعی ورزشی شهرداری ساوه">
-            <div class="section-title d-flex align-items-center justify-content-center gap-4">
+            <h2 class="section-title d-flex align-items-center justify-content-center gap-4">
                 <span>آخرین اخبار</span>
-            </div>
+            </h2>
             <div class="section-subtitle">
                 با تازه ترین رویدادها، اخبار و اطلاعیه های شهرداری همراه ما باشید
             </div>
@@ -249,9 +251,9 @@
                                             {% if news.featured_image %}
                                                 <img class="img-fluid rounded shadow-sm" src="{{ news.featured_image.url }}" alt="{{ news.title }}">
                                             {% endif %}
-                                            <div class="m-news-title ms-2">
+                                            <h3 class="m-news-title ms-2">
                                                 {{ news.title }}
-                                            </div>
+                                            </h3>
                                         </div>
                                         <div class="m-news-extra d-flex justify-content-end mt-2">
                                             <p>{{ news.created_at|to_jalali:'%Y/%m/%d' }}</p>
@@ -315,12 +317,12 @@
     <section class="tourism mt-5">
         <a href="blog_detail.html" class="section-title-wrapper text-decoration-none d-flex flex-column align-items-center justify-content-center gap-2">
             <img src="{% static "images/gallery-icon.png" %}" alt="سازمان فرهنگی هنری اجتماعی ورزشی شهرداری ساوه">
-            <div class="section-title d-flex align-items-center justify-content-center gap-4">
+            <h2 class="section-title d-flex align-items-center justify-content-center gap-4">
                 <span>اماکن دیدنی و گردشگری</span>
-            </div>
-            <div class="section-subtitle">
+            </h2>
+            <h3 class="section-subtitle">
                 جاذبه‌های تاریخی، فرهنگی و طبیعی ساوه را کشف کنید و از زیبایی‌های شهر لذت ببرید.
-            </div>
+            </h3>
         </a>
 
         <div class="container-fluid mt-5">
@@ -369,9 +371,9 @@
      <section class="ceo container mt-5">
         <a class="section-title-wrapper text-decoration-none d-flex flex-column align-items-center justify-content-center gap-2">
             <img src="{% static "images/ceo-icon.png" %}" alt="سازمان فرهنگی هنری اجتماعی ورزشی شهرداری ساوه">
-            <div class="section-title d-flex align-items-center justify-content-center gap-4">
+            <h2 class="section-title d-flex align-items-center justify-content-center gap-4">
                 <span>سخن مدیرعامل</span>
-            </div>
+            </h2>
             <div class="section-subtitle">
                 {{ ceo_speech.slogan }}
             </div>

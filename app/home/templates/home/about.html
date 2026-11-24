@@ -7,6 +7,8 @@
 
 {% block title %} سازمان فرهنگی هنری ورزشی شهرداری ساوه {% endblock title %}
 
+{% block meta_desc %} درباره وبسایت سازمان فرهنگی هنری ورزشی شهرداری ساوه بیشتر بدانید {% endblock meta_desc %}
+
 {% block body %}
     {% comment %} hero banner {% endcomment %}
     {% include "home/about_hero.html" %}
@@ -20,9 +22,9 @@
                         <div class="sec-intro d-flex align-items-center">
                             معرفی سازمان
                         </div>
-                        <div class="sec-title mt-2">
+                        <h1 class="sec-title mt-2">
                             سازمان فرهنگی اجتماعی ورزشی شهرداری ساوه    
-                        </div>
+                        </h1>
                     </div>
 
                     <div class="overview-content mt-2">
@@ -40,9 +42,9 @@
         <section class="missions mt-5">
             <a class="section-title-wrapper text-decoration-none d-flex flex-column align-items-center justify-content-center gap-2">
                 <img src="{% static 'images/missions.png' %}" alt="سازمان فرنگی هنری اجتماعی ورزشی شهرداری ساوه">
-                <div class="section-title d-flex align-items-center justify-content-center gap-4">
+                <h2 class="section-title d-flex align-items-center justify-content-center gap-4">
                     <span>ماموریت و چشم انداز</span>
-                </div>
+                </h2>
             </a>
 
             <div class="missions-wrapper shadow-lg p-3 d-flex align-items-center justify-content-center flex-wrap flex-lg-nowrap mt-4 gap-2">
@@ -158,9 +160,9 @@
      <section class="ceo container mt-5 mb-5">
         <a class="section-title-wrapper text-decoration-none d-flex flex-column align-items-center justify-content-center gap-2">
             <img src="{% static 'images/ceo-icon.png' %}" alt="سازمان فرنگی هنری اجتماعی ورزشی شهرداری ساوه">
-            <div class="section-title d-flex align-items-center justify-content-center gap-4">
+            <h2 class="section-title d-flex align-items-center justify-content-center gap-4">
                 <span>سخن مدیرعامل</span>
-            </div>
+            </h2>
             <div class="section-subtitle">
                 {{ ceo_speech.slogan }}
             </div>

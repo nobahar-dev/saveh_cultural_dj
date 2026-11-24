@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.conf import settings
 from django.utils.text import slugify
 from django_ckeditor_5.fields import CKEditor5Field
@@ -46,6 +47,10 @@ class Article(models.Model):
             self.slug = candidate
             
         super().save(*args, **kwargs)
+        
+    def get_absolute_url(self):
+        return reverse('blog:article_detail', kwargs={'slug': self.slug})
+    
         
     def __str__(self):
         return self.title

@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="{% static "css/glightbox.min.css" %}">
 {% endblock css_styles %}
 
-{% block title %} سازمان فرهنگی هنری ورزشی شهرداری ساوه {% endblock title %}
+{% block title %} {{ article.title }} - سازمان فرهنگی اجتماعی ورزشی شهرستان ساوه {% endblock title %}
+
+{% block meta_desc %} {{ article.meta_descriptions|default:"article.summary"|striptags|truncatechars:170 }} {% endblock meta_desc %}
 
 {% block body %}
    <!-- blog detail title -->
@@ -16,9 +18,9 @@
         {% comment %} breadcrumbs {% endcomment %}
         {% include "breadcrumbs.html" %}
 
-        <div class="article-title mt-2">
+        <h1 class="article-title mt-2">
             {{ article.title }}
-        </div>
+        </h1>
         <div class="article-extras mt-2 d-flex align-items-center gap-4">
             <div class="ar-extra-item d-flex gap-2">
                 <i class="bi bi-person-vcard"></i>
